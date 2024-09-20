@@ -1,0 +1,99 @@
+.card-container2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    font-family: 'Roboto';
+    text-align: left;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-heading {
+    font-weight: bold;
+    padding-top: 5px;
+    font-family: 'Roboto';
+    text-align: left;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+    font-family: 'Roboto';
+    text-align: left;
+}
+
+.card hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+}
+
+.card .date-container {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+.card .date-container h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #333;
+}
+
+.card .date-container p {
+    padding-top: 10px;
+    font-size: 20px;
+    margin: 0;
+    color: #888;
+}
+
+/* Media Queries for Larger Devices */
+@media (min-width: 1024px) {
+    .card-container {
+        gap: 0; /* Removes the gap between cards */
+    }
+}
+
+/* Media Queries for Medium Devices */
+@media (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium devices */
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Media Queries for Small Devices */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr; /* 1 card per row on small devices */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card-heading2 {
+        font-size: 1.2rem;
+        font-family: 'Roboto';
+        text-align: left;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+        font-family: 'Roboto';
+        text-align: left;
+    }
+}

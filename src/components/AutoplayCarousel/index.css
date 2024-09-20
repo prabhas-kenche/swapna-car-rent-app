@@ -1,0 +1,58 @@
+.carousel {
+    position: relative;
+    width: 90%; /* Decreased width for better appearance */
+    max-width: 800px; /* Added max-width for larger screens */
+    height: 40vh; /* Adjusted height for responsive scaling */
+    overflow: hidden;
+    margin: auto; /* Center the carousel */
+}
+
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the container without distortion */
+}
+
+/* Hide non-active items */
+.carousel-item {
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+/* Responsive adjustments */
+
+/* Larger devices - fixed height */
+@media (min-width: 1200px) {
+    .carousel {
+        height: 350px; /* Set a fixed height for large screens */
+    }
+}
+
+/* Tablets - slightly smaller height */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .carousel {
+        height: 300px; /* Slightly smaller height for tablet-sized devices */
+    }
+}
+
+/* Mobile devices - larger relative height */
+@media (max-width: 767px) {
+    .carousel {
+        height: 35vh; /* Adjust height to 35% of the viewport for mobile devices */
+    }
+}
