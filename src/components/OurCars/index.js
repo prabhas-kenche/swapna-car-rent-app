@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
 import './index.css';
 
 const OurCars = () => {
     const [visibleIndex, setVisibleIndex] = useState(null);
-    const navigate = useNavigate(); // Initialize the navigate function
+    const navigate = useNavigate();
 
     const toggleDetails = (index) => {
         setVisibleIndex(visibleIndex === index ? null : index);
@@ -71,7 +71,6 @@ const OurCars = () => {
     ];
 
     const handleBookCar = (car) => {
-        // Navigate to the CarBookForm page with the selected car data
         navigate('/car-book-form', { state: { car } });
     };
 
@@ -84,12 +83,12 @@ const OurCars = () => {
                     <p>HOME/<span>OUR CARS</span></p>
                 </div>
                 <div className="pt-5 pb-5">
-                    <div className="card-container">
+                    <div className="car-card-container">
                         {cars.map((car, index) => (
-                            <div className="card text-center" key={index}>
+                            <div className="car-card text-center" key={index}>
                                 <img src={car.imgSrc} alt={`${car.title}-car`} />
                                 <h2>{car.title}</h2>
-                                <div className="features">
+                                <div className="car-features">
                                     <div>
                                         <i className="fa-solid fa-person"></i> {car.features[0]}
                                     </div>
@@ -103,19 +102,19 @@ const OurCars = () => {
                                 <p>{car.description}</p>
 
                                 {visibleIndex === index && (
-                                    <div className="hidden-details visible">
+                                    <div className="car-hidden-details car-visible">
                                         {car.prices.map((price, i) => (
                                             <p key={i}>{price}</p>
                                         ))}
                                     </div>
                                 )}
 
-                                <button className="toggle-btn" onClick={() => toggleDetails(index)}>
+                                <button className="car-toggle-btn" onClick={() => toggleDetails(index)}>
                                     {visibleIndex === index ? "Hide Details" : "View Details"}
                                 </button>
 
                                 {visibleIndex === index ? (
-                                    <button className="toggle-btn" onClick={() => handleBookCar(car)}>
+                                    <button className="car-toggle-btn" onClick={() => handleBookCar(car)}>
                                         Book My Car
                                     </button>
                                 ) : null}
@@ -123,7 +122,7 @@ const OurCars = () => {
                         ))}
                     </div>
                 </div>
-                {/* Note section and other content here */}
+
                 <div className="note-container pb-5 pt-5">
                     <h2>NOTE :</h2>
                     <div className="notes">
@@ -164,5 +163,6 @@ const OurCars = () => {
         </>
     );
 };
+
 
 export default OurCars;

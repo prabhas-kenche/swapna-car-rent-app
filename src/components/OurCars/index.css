@@ -1,76 +1,83 @@
-.card-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
+.car-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid with wider cards */
+    gap: 20px; /* Gap between cards */
+    margin-right: 100px;
+    margin-left: 100px;
+    align-items: flex-start; /* Align items at the start */
+    justify-content: center; /* Center the cards */
 }
 
-.card {
+@media (max-width: 767px) {
+    .car-card-container {
+        display: flex;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+
+.car-card {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 300px; /* Reduced max-width for better fit */
+    max-width: 400px; /* Increased card width */
     margin: 10px;
     padding: 20px;
     text-align: center;
+    flex: 1 1 350px;
     transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 300px; /* Responsive flex property */
 }
 
-.hidden-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-    opacity: 0;
-}
-
-.card:hover {
+.car-card:hover {
     transform: translateY(-5px);
 }
 
-.card img {
+.car-card img {
     width: 100%;
     border-radius: 8px;
-    height: 150px; /* Reduced height for better fit */
+    height: 200px;
     object-fit: cover;
 }
 
-.card h2 {
-    font-size: 1.5rem; /* Adjusted for better responsiveness */
+.car-card h2 {
+    font-size: 24px;
     margin: 15px 0;
     color: #333;
+    text-align: center;
 }
 
-.card p {
+.car-card p {
     margin: 5px 0;
     color: #666;
 }
 
-.card .features {
+.car-features {
     display: flex;
     justify-content: space-around;
     margin: 15px 0;
-    font-size: 14px;
-    padding-left: 7px;
 }
 
-.card .features div {
+.car-features div {
     display: flex;
     align-items: center;
     gap: 5px;
     color: #333;
 }
 
-.visible {
+.car-hidden-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    opacity: 0;
+}
+
+.car-visible {
     max-height: 200px;
     opacity: 1;
 }
 
-.toggle-btn {
+.car-toggle-btn {
     padding: 8px 16px;
     background-color: #007BFF;
     color: white;
@@ -81,9 +88,24 @@
     width: 150px;
 }
 
-.toggle-btn:hover {
+.car-toggle-btn:hover {
     background-color: #0056b3;
 }
+
+/* Media Queries for Responsive Cards */
+@media (max-width: 768px) {
+    .car-card {
+        flex: 1 0 calc(50% - 20px); /* 2 cards per row on medium devices */
+    }
+}
+
+@media (max-width: 576px) {
+    .car-card {
+        flex: 1 0 100%; /* 1 card per row on small devices */
+    }
+}
+
+
 
 .note-container {
     background-color: #f9fbfe;

@@ -7,8 +7,8 @@ const Header = () => {
       <div className="container">
         <Link className="navbar-brand" to="/">
           <img
-            src="https://res.cloudinary.com/dagkvnqd9/image/upload/v1726811579/carlogo_srzzcg.png"
-            className="self-driving-cars-logo"
+            src="https://res.cloudinary.com/dagkvnqd9/image/upload/WhatsApp_Image_2024-09-13_at_9.33.52_PM-removebg_oalbnc.png"
+            className="self-driving-cars-logo-1"
             alt="Self Driving Cars Logo"
           />
         </Link>
@@ -37,7 +37,7 @@ const Header = () => {
             <Link className="nav-link" to="/contact">
               CONTACT
             </Link>
-            <Link to="/sellyourcar" className="nav-link">
+            <Link to="/sellyourcar" className="nav-link-2">
               <button className="sell-button">SELL YOUR CAR</button>
             </Link>
           </div>

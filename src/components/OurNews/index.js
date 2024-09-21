@@ -43,37 +43,38 @@ const OurNews = () => {
                 <h1>OUR NEWS</h1>
                 <p>HOME/<span>OUR NEWS</span></p>
             </div>
-            <div className="news-articles-container">
-                {newsArticles.map((article, index) => (
-                    <div className="news-item" key={index}>
-                        <div className="news-image-wrapper">
-                            <img src={article.imgSrc} alt={`${article.title}-car`} className="news-image" />
-                            <div className="news-date-badge">
-                                <span className="news-day">{article.date.day}</span>
-                                <span className="news-month">{article.date.month}</span>
-                            </div>
-                        </div>
-                        <div className="news-details">
-                            <h2>{article.title}</h2>
-                            <p>{article.description}</p>
-                            <div className="news-actions">
-                                <button className="read-more">READ MORE</button>
-                                <div className="share-section">
-                                    <span>SHARE THIS</span>
-                                    <div className="share-buttons">
-                                        <a href="https://x.com/"><i className="fab fa-twitter"></i></a>
-                                        <a href="https://www.pinterest.com/"><i className="fab fa-pinterest"></i></a>
-                                        <a href="https://www.behance.net/"><i className="fab fa-behance"></i></a>
-                                        <a href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a>
-                                        <a href="https://www.youtube.com/"><i className="fab fa-youtube"></i></a>
-                                        <a href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+            <div className="article-list-container">
+    {newsArticles.map((article, index) => (
+        <div className="article-item" key={index}>
+            <div className="article-image-wrapper">
+                <img src={article.imgSrc} alt={`${article.title}-car`} className="article-image" />
+                <div className="article-date-badge">
+                    <span className="article-day">{article.date.day}</span>
+                    <span className="article-month">{article.date.month}</span>
+                </div>
+            </div>
+            <div className="article-details">
+                <h2>{article.title}</h2>
+                <p>{article.description}</p>
+                <div className="article-actions">
+                    <button className="read-more-btn">READ MORE</button>
+                    <div className="article-share-section">
+                        <span>SHARE THIS</span>
+                        <div className="article-share-buttons">
+                            <a href="https://x.com/"><i className="fab fa-twitter"></i></a>
+                            <a href="https://www.pinterest.com/"><i className="fab fa-pinterest"></i></a>
+                            <a href="https://www.behance.net/"><i className="fab fa-behance"></i></a>
+                            <a href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a>
+                            <a href="https://www.youtube.com/"><i className="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                ))}
+                </div>
             </div>
+        </div>
+    ))}
+</div>
+
             <div className="pt-5">
                 <div className="background-image">
                     <div className="content">

@@ -31,81 +31,89 @@
     color: #ffffff;
 }
 
-.news-articles-container {
+
+
+
+/* Container for the articles */
+.article-list-container {
     display: flex;
-    flex-direction: column; /* Stack the cards vertically */
-    justify-content: center;
-    align-items: center; /* Center the cards horizontally */
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     margin: 20px 0;
 }
 
-.news-item {
+/* Article card */
+.article-item {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 40%; /* Set the width of the cards to 80% of the container */
+    width: 60%; /* Default width on larger screens */
     padding: 20px;
     text-align: left;
+    transition: width 0.3s ease-in-out;
 }
 
-.news-image-wrapper {
+/* Image wrapper with the date badge */
+.article-image-wrapper {
     position: relative;
 }
 
-.news-image {
+.article-image {
     width: 100%;
     border-radius: 8px;
-    height: auto;
     object-fit: cover;
 }
 
-.news-date-badge {
+.article-date-badge {
     position: absolute;
     top: 15px;
     right: 15px;
     background-color: #db4c3f;
-    color: #fff;
+    color: white;
     padding: 5px 10px;
     border-radius: 3px;
     text-align: center;
     font-weight: bold;
 }
 
-.news-day {
+.article-day {
     font-size: 24px;
 }
 
-.news-month {
+.article-month {
     font-size: 14px;
     text-transform: uppercase;
 }
 
-.news-details {
+/* Article details (title and description) */
+.article-details {
     padding: 20px;
 }
 
-.news-details h2 {
+.article-details h2 {
     font-size: 1.5rem;
     margin: 15px 0;
     color: #333;
-    font-family: 'Roboto';
-    font-weight: Bold;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
 
-.news-details p {
+.article-details p {
     margin: 5px 0;
     color: #666;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
 }
 
-.news-actions {
+/* Actions like read more and share buttons */
+.article-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
 }
 
+/* Read more button */
 .read-more-btn {
     padding: 8px 16px;
     background-color: #007BFF;
@@ -113,40 +121,108 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .read-more-btn:hover {
     background-color: #0056b3;
 }
 
-.share-section {
+/* Share section with icons */
+.article-share-section {
     display: flex;
     align-items: center;
 }
 
-.share-section span {
+.article-share-section span {
     margin-right: 10px;
     font-size: 14px;
     color: #666;
 }
 
-.social-links {
+.article-share-buttons {
     display: flex;
     gap: 10px;
 }
 
-.social-links a {
-    display: inline-block;
+.article-share-buttons a {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #333;
     font-size: 18px;
 }
+
+/* Responsive adjustments */
+
+/* For tablets and smaller devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .article-item {
+        width: 80%; /* On smaller devices, cards take up more space */
+        margin: 10px;
+    }
+
+    .article-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .read-more-btn {
+        width: 100%;
+        margin-bottom: 10px; /* Adds space between button and share section */
+    }
+
+    .article-share-section {
+        justify-content: center;
+    }
+}
+
+/* For very small devices (max-width: 576px) */
+@media (max-width: 576px) {
+    .article-item {
+        width: 80%; /* On smaller devices, cards take up more space */
+        margin: 10px;
+    }
+
+    .article-actions {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px; /* Space between button and share section */
+    }
+
+    .read-more-btn {
+        width: 100%; /* Full width for better touchability */
+    }
+
+    .article-share-section {
+        justify-content: center;
+        flex-direction: column; /* Stack share section items vertically */
+        align-items: center;
+    }
+
+    .article-share-buttons {
+        justify-content: center;
+    }
+
+    .article-share-section span {
+        margin-bottom: 5px; /* Add space between "Share Here" text and icons */
+    }
+
+    .article-share-buttons a {
+        font-size: 16px; /* Slightly reduce icon size */
+    }
+}
+
+
+
+
+
+
+
 
 .background-banner {
     display: flex;

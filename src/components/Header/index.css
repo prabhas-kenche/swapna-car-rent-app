@@ -1,8 +1,9 @@
 /* Logo Styles */
-.self-driving-cars-logo {
-  padding-top: 25px;
-  width: 100px; /* Fixed width */
-  height: 105px; /* Fixed height */
+.self-driving-cars-logo-1 {
+  padding-top: 10px;
+  width: 100px; /* Default logo size */
+  height: 100px; /* Default logo height */
+  transition: width 0.3s ease, height 0.3s ease; /* Smooth transition for resizing */
 }
 
 /* Navbar Styles */
@@ -15,6 +16,14 @@
 
 /* Nav Link Styles */
 .nav-link {
+  font-size: 1rem;
+  color: #323f4b; /* Updated color */
+  margin: 0 15px;
+  font-family: "Roboto"; /* Updated font */
+  padding-top: 13px;
+}
+
+.nav-link-2 {
   font-size: 1rem;
   color: #323f4b; /* Updated color */
   margin: 0 15px;
@@ -49,7 +58,7 @@
       padding: 10px; /* Add some padding */
   }
 
-  .self-driving-cars-logo {
+  .self-driving-cars-logo-1 {
       width: 80px; /* Smaller logo on mobile */
       height: 85px; /* Adjust height for mobile */
       padding-top: 15px; /* Adjust padding */
@@ -58,7 +67,13 @@
   .nav-link {
       font-size: 0.9rem; /* Slightly smaller font on mobile */
       margin: 0 10px; /* Less margin */
+      padding-top: 0;
   }
+
+  .nav-link-2 {
+    font-size: 0.9rem; /* Slightly smaller font on mobile */
+    margin: 0 10px; /* Less margin */
+}
 
   .sell-button {
       height: 35px; /* Smaller button on mobile */
@@ -71,12 +86,20 @@
   .nav-link {
       font-size: 0.8rem; /* Even smaller font on very small screens */
       margin: 0 5px; /* Minimal margin */
+      padding-top: 0;
   }
 
-  .self-driving-cars-logo {
+  .nav-link-2 {
+    font-size: 0.8rem; /* Even smaller font on very small screens */
+    margin: 0 5px; /* Minimal margin */
+}
+
+  .self-driving-cars-logo-1 {
       width: 60px; /* Further reduce logo size */
       height: 65px; /* Further adjust height */
   }
 
 
 }
+
+
