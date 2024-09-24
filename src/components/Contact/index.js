@@ -1,7 +1,12 @@
 import Header from '../Header';
+import { useEffect } from 'react';
 import './index.css';
 
 const Contact = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to top instantly
+    }, []);
+
     return (
         <>
             <Header />
@@ -54,7 +59,7 @@ const Contact = () => {
                             <a href="https://www.behance.net/"><i className="fab fa-behance"></i></a>
                             <a href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a>
                             <a href="https://www.youtube.com/"><i className="fab fa-youtube"></i></a>
-                            <a href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/swapnaselfdrivecars?igsh=MTIzM2s3OTd3dzJvNw=="><i className="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>

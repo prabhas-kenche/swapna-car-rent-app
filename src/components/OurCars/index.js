@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
 import './index.css';
@@ -10,6 +11,10 @@ const OurCars = () => {
     const toggleDetails = (index) => {
         setVisibleIndex(visibleIndex === index ? null : index);
     };
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to top instantly
+    }, []);
 
     const cars = [
         {
@@ -44,7 +49,7 @@ const OurCars = () => {
             imgSrc: "https://t.ly/S33d9",
             title: "Ford Aspire",
             features: ["5 Passengers", "Model 2018", "3 Bags"],
-            description: "The Ford Figo is a stylish and compact hatchback offering a balanced mix of performance, fuel efficiency, and modern features.",
+            description: "The Ford Aspire is a stylish and compact hatchback offering a balanced mix of performance, fuel efficiency, and modern features.",
             prices: ["24HRS (300 KM) - 1500 Rs", "14HRS (300 KM) - 1300 Rs", "12HRS (150 KM) - 1000 Rs"]
         },
         {
@@ -78,12 +83,12 @@ const OurCars = () => {
         <>
             <Header />
             <div>
-                <div className="our-cars text-center">
+                <div className="our-cars text-center" id="our-cars-section">
                     <h1>OUR CARS</h1>
                     <p>HOME/<span>OUR CARS</span></p>
                 </div>
                 <div className="pt-5 pb-5">
-                    <div className="car-card-container">
+                    <div className="car-card-container text-center">
                         {cars.map((car, index) => (
                             <div className="car-card text-center" key={index}>
                                 <img src={car.imgSrc} alt={`${car.title}-car`} />
@@ -113,11 +118,11 @@ const OurCars = () => {
                                     {visibleIndex === index ? "Hide Details" : "View Details"}
                                 </button>
 
-                                {visibleIndex === index ? (
+                                {visibleIndex === index && (
                                     <button className="car-toggle-btn" onClick={() => handleBookCar(car)}>
                                         Book My Car
                                     </button>
-                                ) : null}
+                                )}
                             </div>
                         ))}
                     </div>
@@ -146,13 +151,13 @@ const OurCars = () => {
                                 <p><span>HOURS:</span> Mon – Fri :: 9am – 6pm</p>
                             </div>
                             <div className="social-icons">
-                                <a href="https://x.com/"><i className="fab fa-twitter"></i></a>
-                                <a href="https://www.pinterest.com/"><i className="fab fa-pinterest"></i></a>
-                                <a href="https://www.behance.net/"><i className="fab fa-behance"></i></a>
-                                <a href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a>
-                                <a href="https://www.youtube.com/"><i className="fab fa-youtube"></i></a>
-                                <a href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a>
-                            </div>
+                            <a href="https://x.com/"><i className="fab fa-twitter"></i></a>
+                            <a href="https://www.pinterest.com/"><i className="fab fa-pinterest"></i></a>
+                            <a href="https://www.behance.net/"><i className="fab fa-behance"></i></a>
+                            <a href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a>
+                            <a href="https://www.youtube.com/"><i className="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/swapnaselfdrivecars?igsh=MTIzM2s3OTd3dzJvNw=="><i className="fab fa-instagram"></i></a>
+                        </div>
                         </div>
                     </div>
                     <div className="footer-note">
@@ -163,6 +168,5 @@ const OurCars = () => {
         </>
     );
 };
-
 
 export default OurCars;
