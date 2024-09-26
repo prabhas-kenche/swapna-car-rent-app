@@ -21,56 +21,63 @@ const OurCars = () => {
             imgSrc: "https://cars.qeemat.com/suzuki/images/swift-new-2024-full.jpg",
             title: "Swift (Petrol)",
             features: ["4 Passengers", "Model 2018", "2 Bags"],
-            description: "The Swift car is a compact, fuel-efficient vehicle known for its sleek design and responsive performance.",
+            description: "A sporty, fuel-efficient hatchback known for its reliability and agile city performance. Offers good cabin space and a sleek design.",
             prices: ["24HRS (300 KM) - 1500 Rs", "14HRS (300 KM) - 1300 Rs", "12HRS (150 KM) - 1000 Rs", "Standard Class"]
         },
         {
             imgSrc: "https://imgd.aeplcdn.com/642x361/n/cw/ec/51428/hyundai-i20-left-front-three-quarter1.jpeg",
             title: "i20 (Petrol)",
             features: ["4 Passengers", "Model 2018", "2 Bags"],
-            description: "The Hyundai i20 is a stylish and feature-packed hatchback designed for modern drivers.",
+            description: "A premium hatchback with modern features, excellent build quality, and a refined petrol engine for a smooth ride.",
             prices: ["24HRS (300 KM) - 1500 Rs", "14HRS (300 KM) - 1300 Rs", "12HRS (150 KM) - 1000 Rs", "Standard Class"]
         },
         {
             imgSrc: "https://t.ly/7olNT",
             title: "Ritz",
             features: ["4 Passengers", "Model 2012", "2 Bags"],
-            description: "The Maruti Suzuki Ritz is a compact, fuel-efficient hatchback with a tallboy design.",
+            description: "A compact, practical hatchback with tall-boy design and great headroom, offering fuel efficiency and easy handling.",
             prices: ["24HRS (300 KM) - 1500 Rs", "14HRS (300 KM) - 1300 Rs", "12HRS (150 KM) - 1000 Rs", "Standard Class"]
         },
         {
             imgSrc: "https://t.ly/CsXnI",
             title: "Ford Figo",
             features: ["4 Passengers", "Model 2015", "2 Bags"],
-            description: "The Ford Figo is a stylish and compact hatchback offering a balanced mix of performance, fuel efficiency, and modern features.",
+            description: "A small, sporty hatchback known for its responsive engine, solid build, and enjoyable driving dynamics.",
             prices: ["24HRS (300 KM) - 1500 Rs", "14HRS (300 KM) - 1300 Rs", "12HRS (150 KM) - 1000 Rs"]
         },
         {
             imgSrc: "https://t.ly/S33d9",
             title: "Ford Aspire",
             features: ["5 Passengers", "Model 2018", "3 Bags"],
-            description: "The Ford Aspire is a stylish and compact hatchback offering a balanced mix of performance, fuel efficiency, and modern features.",
+            description: " A compact sedan with a comfortable interior, strong petrol engine, and a focus on safety features like airbags and ABS.",
             prices: ["24HRS (300 KM) - 1500 Rs", "14HRS (300 KM) - 1300 Rs", "12HRS (150 KM) - 1000 Rs"]
         },
         {
             imgSrc: "https://t.ly/wr1EN",
             title: "Swift Dzire",
             features: ["5 Passengers", "Model 2018", "3 Bags"],
-            description: "The Maruti Suzuki Swift Dzire is a compact sedan known for its fuel efficiency, spacious interior, and reliable performance.",
+            description: "A fuel-efficient, stylish compact sedan ideal for families, offering a spacious interior and smooth ride quality.",
             prices: ["24HRS (300 KM) - 1500 Rs", "14HRS (300 KM) - 1300 Rs", "12HRS (150 KM) - 1000 Rs"]
         },
         {
             imgSrc: "https://t.ly/fOenb",
             title: "Ecosport Diesel",
             features: ["5 Passengers", "Model 2017", "3 Bags"],
-            description: "The Ford EcoSport Diesel is a compact SUV offering rugged performance, efficient diesel power, and a versatile interior.",
+            description: "A rugged compact SUV with a fuel-efficient diesel engine, offering good torque and features suited for both city and off-road driving.",
             prices: ["24HRS (300 KM) - 2100 Rs", "14HRS (300 KM) - 1800 Rs", "12HRS (150 KM) - 1450 Rs"]
         },
         {
             imgSrc: "https://i.cdn.newsbytesapp.com/images/l41120230408124304.jpeg",
             title: "Kia Sonet Diesel",
             features: ["5 Passengers", "Model 2024", "3 Bags"],
-            description: "The Kia Sonet Diesel is a stylish compact SUV with a powerful diesel engine, advanced features, and excellent fuel efficiency.",
+            description: "A tech-loaded subcompact SUV featuring a clutchless manual transmission, sunroof, and advanced infotainment for a comfortable, high-tech ride.",
+            prices: ["24HRS (300 KM) - 2100 Rs", "14HRS (300 KM) - 1800 Rs", "12HRS (150 KM) - 1450 Rs"]
+        },
+        {
+            imgSrc: "https://res.cloudinary.com/dagkvnqd9/image/upload/20190823065014_maruti-xl6-3_em88gn.jpg",
+            title: "Ertiga & XL6",
+            features: ["5 Passengers", "Model 2024", "3 Bags"],
+            description: "Spacious MPVs ideal for families, with the Ertiga offering practicality and the XL6 featuring captain seats and a more premium feel.",
             prices: ["24HRS (300 KM) - 2100 Rs", "14HRS (300 KM) - 1800 Rs", "12HRS (150 KM) - 1450 Rs"]
         }
     ];

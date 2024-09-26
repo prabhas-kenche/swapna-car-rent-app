@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import OurCars from './components/OurCars';
-import OurNews from './components/OurNews';
+import OurReviews from './components/OurReviews';
 import Contact from './components/Contact';
 import CarBookForm from './components/CarBookForm';
+import AboutUs from './components/AboutUs';
 
 import './App.css';
 
@@ -13,8 +14,9 @@ const App = () => {
       <Route exact path='/' element={<Home />} />
       <Route path='/ourcars' element={<OurCars />} />
       <Route path='/car-book-form' element={<CarBookForm />} />
-      <Route path='/ournews' element={<OurNews />} />
+      <Route path='/reviews' element={<OurReviews />} /> {/* Add this line */}
       <Route path='/contact' element={<Contact />} />
+      <Route path='/aboutus' element={<AboutUs />} />
     </Routes>
   );
 };

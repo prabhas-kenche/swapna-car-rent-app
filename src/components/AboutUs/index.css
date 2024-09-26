@@ -1,0 +1,66 @@
+.about-us {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  padding-top: 115px;
+}
+
+.about-us-content h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.about-us-content h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.about-us-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px; /* Ensures content doesn't touch edges on small screens */
+}
+
+.about-us-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 20px 0;
+}
+
+.about-us-list {
+  list-style-type: none;
+  padding: 0;
+  font-size: 18px;
+}
+
+.about-us-list li {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+/* Responsive design for larger screens */
+@media (min-width: 768px) {
+  .about-us-content {
+    padding: 0 40px;
+  }
+
+  .about-us-list {
+    font-size: 20px;
+  }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 767px) {
+  .about-us-content {
+    padding: 0 15px;
+  }
+
+  .about-us-list {
+    font-size: 16px;
+  }
+
+  .about-us-image {
+    max-width: 100%;
+  }
+}

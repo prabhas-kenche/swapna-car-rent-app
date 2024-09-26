@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Header from '../Header';
 import AutoplayCarousel from '../AutoplayCarousel';
 import CarHire from '../CarHire';
-import RecentBlogs from '../RecentBlog';
+import Reviews from '../Reviews';
 import './index.css';
 
 const Home = () => {
@@ -75,16 +75,16 @@ const Home = () => {
                         </div>
                         <div className="col-12 col-md-8 d-flex justify-content-between text-center">
                             <div className="stat-box">
-                                <h1>344M+</h1>
+                                <h1>140+</h1>
                                 <p>PASSES GRADUATES</p>
                             </div>
                             <div className="stat-box">
-                                <h1>2M+</h1>
+                                <h1>1000+</h1>
                                 <p>SATISFIED CUSTOMERS</p>
                             </div>
                             <div className="stat-box">
-                                <h1>6540</h1>
-                                <p>ORDERS DONE</p>
+                                <h1>4000</h1>
+                                <p>ORDERS DONE (including repetitive customers)</p>
                             </div>
                         </div>
                     </div>
@@ -124,9 +124,13 @@ const Home = () => {
             <div className="about-section container py-5">
                 <div className="row align-items-center">
                     <div className="about-part col-12 col-md-4 text-md-left text-center">
-                        <h1 className='about'>WE ARE</h1>
-                        <p className='about-desc'>This is a Free Demo of our Premium Responsive WordPress Theme. It has an awesome Car Rental Landing Page.</p>
-                        <p className='about-desc'>Fully Customizable and every page can be fully customized so you will not have any problems using your own logo.</p>
+                        <h1 className='about'>Why Choose Us?</h1>
+                        <h6 className='about-2'>Hygiene First</h6>
+                        <p className='about-desc'>Our cars are sanitized and cleaned thoroughly between each rental, ensuring a comfortable and safe journey.</p>
+                        <h6 className='about-2'>Flexible Rentals</h6>
+                        <p className='about-desc'>Rent a car for daily, weekly, or monthly needs, tailored to your travel plans.</p>
+                        <h6 className='about-2'>Hassle-Free Experience</h6>
+                        <p className='about-desc'>Enjoy a seamless rental process with our efficient booking system and friendly customer service.</p>
                     </div>
                     <div className="col-12 col-md-7 text-center">
                         <img src="https://autozone-theme.com/lux/wp-content/uploads/2024/01/martin-katler-y3neNkE6efI-unsplash-min.jpg" alt="car-image" className="img-fluid" loading="lazy" />
@@ -134,7 +138,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <RecentBlogs />
+            <Reviews />
 
             <div className="pt-5">
                 <div className="background-image">

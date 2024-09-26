@@ -102,4 +102,10 @@
 
 }
 
+/* Active Nav Link Styles */
+.active-nav {
+  color: #007bff !important; /* Highlight color for active link */
+  font-weight: bold; /* Make active link bold */
+}
+
 
