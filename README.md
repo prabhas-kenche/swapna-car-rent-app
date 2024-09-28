@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# Swapna Car Rent App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Swapna Car Rent App! This web application is designed to streamline the car rental process, providing users with an intuitive interface to book their desired vehicle with ease. Whether you're planning a weekend getaway or a business trip, this app has you covered!
 
-## Available Scripts
+## Features
 
 In the project directory, you can run:
 
