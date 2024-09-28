@@ -7,6 +7,8 @@ const Contact = () => {
         window.scrollTo(0, 0); // Scroll to top instantly
     }, []);
 
+    const whatsappNumber = "8309772580"; // Your WhatsApp number without spaces or special characters
+
     return (
         <>
             <Header />
@@ -14,42 +16,49 @@ const Contact = () => {
                 <h1>CONTACT</h1>
                 <p>HOME/<span>CONTACT</span></p>
             </div>
-            <div className='d-flex flex-row justify-content-center'>
-            <div className="form-container">
-                <div className="form-header">
-                    <div className="icon">
-                        <span>❮❯</span>
-                    </div>
-                    <h2>FEEL FREE TO SEND US A MESSAGE OR ASK FOR A FREE QUOTE</h2>
-                </div>
 
-                <form action="#" method="POST" className="contact-form">
-                    <div className="form-row">
-                        <input type="text" name="first_name" placeholder="First Name" required />
-                        <input type="text" name="last_name" placeholder="Last Name" required />
+            <section className="contact-section">
+                <h2>Contact Us</h2>
+                <div className="contact-info">
+                    <div className="contact-item">
+                        <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-whatsapp"></i>
+                            <span>WhatsApp: {whatsappNumber}</span>
+                        </a>
                     </div>
-                    <div className="form-row">
-                        <input type="email" name="email" placeholder="Email" required />
-                        <input type="tel" name="phone" placeholder="Phone" required />
+                    <div className="contact-item">
+                        <i className="fas fa-phone"></i>
+                        <span>Contact: 83097 72580 / 95508 84883</span>
                     </div>
-                    <div className="form-row">
-                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <div className="contact-item">
+                        <i className="fas fa-envelope"></i>
+                        <span>Gmail: swapnaselfdrivecars@gmail.com</span>
                     </div>
-                    <div className="form-row">
-                        <button type="submit" className="submit-btn">Send Message</button>
+                    <div className="contact-item">
+                        <i className="fas fa-map-marker-alt"></i>
+                        <span>Address: Hig 23, Road No-6, Housing Board Colony, Jadcherla, Telangana -509 301</span>
                     </div>
-                </form>
-            </div>
-            </div>
+                    <div className="contact-item">
+                        <i className="fas fa-map-marked-alt"></i>
+                        <a href="https://maps.app.goo.gl/NW7kVyjtmQiYDFED7?g_st=com.google.maps.preview.copy" target="_blank" rel="noopener noreferrer">
+                            Google Maps
+                        </a>
+                    </div>
+                </div>
+            </section>
 
             <div className="pt-5">
                 <div className="background-image">
                     <div className="content">
-                        <img src="https://res.cloudinary.com/dzptijryk/image/upload/v1726250227/WhatsApp_Image_2024-09-13_at_9.33.52_PM-removebg_welufj.png" className="self-driving-cars-logo" alt="Self Driving Cars Logo" />
+                        <img 
+                            src="https://res.cloudinary.com/dzptijryk/image/upload/v1726250227/WhatsApp_Image_2024-09-13_at_9.33.52_PM-removebg_welufj.png" 
+                            className="self-driving-cars-logo" 
+                            alt="Self Driving Cars Logo" 
+                        />
                         <p className="showroom-location">: SHOWROOM LOCATION :</p>
                         <p>Road No.6 Housing Board Colony, Jedcherla, Mahboobnagar (Dist)</p>
                         <div className="contact-info">
-                            <p><span>PHONE:</span> 8309772580 9550884883</p>
+                            <p><span>PHONE:</span> 8309772580 / 9550884883</p>
                             <p><span>EMAIL:</span> info@autozone.com</p>
                             <p><span>HOURS:</span> Mon – Fri :: 9am – 6pm</p>
                         </div>

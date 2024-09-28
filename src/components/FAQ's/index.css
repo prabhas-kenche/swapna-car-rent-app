@@ -1,0 +1,62 @@
+.faq-container {
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 40px auto;
+    font-family: 'Arial', sans-serif;
+    color: #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align all text to the left */
+}
+
+.faq-container h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #000; /* Primary color for heading */
+}
+
+.faq-container h2 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 26px;
+    margin-top: 30px;
+    color: #000; /* Secondary color for subheadings */
+}
+
+.faq-item {
+    margin-bottom: 15px; /* Spacing between FAQ items */
+}
+
+.faq-item strong {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px; /* Space between question and answer */
+}
+
+.faq-container p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555; /* Slightly darker color for text */
+}
+
+/* Adding hover effect on h2 headings */
+.faq-container h2:hover {
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+/* Enhancing link style */
+.faq-container a {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.faq-container a:hover {
+    border-bottom: 2px solid #0d6efd;
+}

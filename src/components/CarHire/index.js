@@ -15,7 +15,6 @@ const CarHire = () => {
         <div className="car-hire-section pt-5 pb-5">
             <div className="car-hire-header text-center">
                 <h1 className='car-hire-title'>Enterprise Car Hire</h1>
-                <p className='car-hire-description'>Fully Customizable and every page can be fully customized</p>
             </div>
             <div className="car-card-container d-flex flex-row">
                 <div 

@@ -103,3 +103,22 @@ button:hover {
         transform: translateY(0);
     }
 }
+
+.heading-frame {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button-2 {
+    margin: 0 auto; /* Ensure button is centered */
+}

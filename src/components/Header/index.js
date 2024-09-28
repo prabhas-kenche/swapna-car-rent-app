@@ -21,10 +21,17 @@ const Header = () => {
       }
     };
 
+    const handleToggleClick = () => {
+      navbarCollapse.classList.toggle('show');
+      navbarToggler.classList.toggle('collapsed');
+    };
+
+    navbarToggler.addEventListener('click', handleToggleClick);
     document.addEventListener('click', handleClickOutside);
     window.addEventListener('scroll', handleScroll);
 
     return () => {
+      navbarToggler.removeEventListener('click', handleToggleClick);
       document.removeEventListener('click', handleClickOutside);
       window.removeEventListener('scroll', handleScroll);
     };
@@ -33,7 +40,7 @@ const Header = () => {
   const handleNavLinkClick = () => {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
-    
+
     // Collapse the navbar after clicking a link
     if (navbarCollapse.classList.contains('show')) {
       navbarToggler.classList.add('collapsed');
@@ -54,8 +61,6 @@ const Header = () => {
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup"
           aria-expanded="false"
           aria-label="Toggle navigation"
@@ -64,19 +69,19 @@ const Header = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ml-auto">
-            <NavLink exact className="nav-link" to="/" activeClassName="active-nav" onClick={handleNavLinkClick}>
+            <NavLink exact className="nav-link" to="/" onClick={handleNavLinkClick}>
               HOME
             </NavLink>
-            <NavLink className="nav-link" to="/ourcars" activeClassName="active-nav" onClick={handleNavLinkClick}>
+            <NavLink className="nav-link" to="/ourcars" onClick={handleNavLinkClick}>
               OUR CARS
             </NavLink>
-            <NavLink className="nav-link" to="/reviews" activeClassName="active-nav" onClick={handleNavLinkClick}>
+            <NavLink className="nav-link" to="/reviews" onClick={handleNavLinkClick}>
               REVIEWS
             </NavLink>
-            <NavLink className="nav-link" to="/contact" activeClassName="active-nav" onClick={handleNavLinkClick}>
+            <NavLink className="nav-link" to="/contact" onClick={handleNavLinkClick}>
               CONTACT
             </NavLink>
-            <NavLink className="nav-link" to="/aboutus" activeClassName="active-nav" onClick={handleNavLinkClick}>
+            <NavLink className="nav-link" to="/aboutus" onClick={handleNavLinkClick}>
               ABOUT US
             </NavLink>
           </div>

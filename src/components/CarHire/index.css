@@ -101,3 +101,16 @@ body {
     font-size: 18px;
     color: #666;
 }
+
+
+body {
+    touch-action: pan-x pan-y; /* Allows zooming on mobile devices */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    user-select: none; /* Prevents text selection on double-click */
+}
+
+img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    pointer-events: none; /* Prevent interaction with images */
+}

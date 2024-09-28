@@ -1,12 +1,14 @@
 /* Base styles for large screens (desktop) */
 .heading {
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 800;
     font-family: sans-serif;
+    margin: 0 10px; /* Adjust spacing between words */
+
 }
 
 .desc {
-    font-size: 50px;
+    font-size: 40px;
     color: #323f4b;
 }
 
@@ -16,11 +18,23 @@
     margin-bottom: 20px;
 }
 
+.heading-container {
+    display: flex;
+    flex-direction: column; /* Default to column layout */
+  }
+  
+  @media (min-width: 768px) { /* For larger devices */
+    .heading-container {
+      flex-direction: row; /* Switch to row layout on larger screens */
+      justify-content: center; /* Optional: center the text */
+    }
+  }
+
 /* Media Queries for Tablets (768px and up) */
 @media (max-width: 1024px) {
     .heading {
-        font-size: 60px; /* Decrease heading font size */
-    }
+        font-size: 3rem; /* Increase font size for larger screens */
+      }
 
     .desc {
         font-size: 40px; /* Adjust description size */
@@ -629,13 +643,24 @@
 .background-image {
     width: 100%;
     height: 70vh;
-    background-image: url('https://c4.wallpaperflare.com/wallpaper/5/965/110/porsche-911-rsr-2017-racing-wallpaper-thumb.jpg');
+    background-image: url('https://res.cloudinary.com/dagkvnqd9/image/upload/e1csgcui_vpxvcl.png');
     background-size: cover;
     background-position: center;
     position: relative;
     overflow: hidden;
     margin: 0;
     padding: 0;
+}
+
+.bg-container{
+    width: 100%;
+    height: 15vh;
+    background-image: url('https://res.cloudinary.com/dagkvnqd9/image/upload/WhatsApp_Image_2024-09-28_at_2.49.20_PM_hbtq7x.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 15px;
 }
 
 .content {
@@ -770,3 +795,14 @@
     opacity: 1;
   }
   
+  body {
+    touch-action: pan-x pan-y; /* Allows zooming on mobile devices */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    user-select: none; /* Prevents text selection on double-click */
+}
+
+img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    pointer-events: none; /* Prevent interaction with images */
+}

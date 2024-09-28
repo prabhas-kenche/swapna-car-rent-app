@@ -28,34 +28,39 @@ const renderStars = (rating) => {
 
 const reviews = [
   {
-    imgSrc: "https://lh3.googleusercontent.com/a-/ALV-UjVbtEqUvogq9CB6jHvFPbAtBCcq9LXVtx6LYlan9N78mCrQkmYeuQ=w75-h75-p-rp-mo-br100",
+    name: "Abhinav Kaushik",
+    imgSrc: "https://res.cloudinary.com/dagkvnqd9/image/upload/image1_j8dd01.png",
     review: "Very good car service. All the cars I have rented were in good condition. The best part is that the owner is very cooperative.",
-    rating: 4.5
-  },
-  {
-    imgSrc: "https://randomuser.me/api/portraits/men/32.jpg",
-    review: "Fantastic experience! The customer support was prompt and helpful. I highly recommend their service for a hassle-free experience.",
     rating: 5
   },
   {
-    imgSrc: "https://randomuser.me/api/portraits/women/45.jpg",
-    review: "I had a great time renting cars here. The pricing is transparent, and the cars are well-maintained. Will definitely come back!",
-    rating: 4
-  },
-  {
-    imgSrc: "https://randomuser.me/api/portraits/men/76.jpg",
-    review: "The best car rental service I've used. Their fleet is top-notch, and they ensure customer satisfaction every time.",
+    name: "Naveen Godavarthy",
+    imgSrc: "https://res.cloudinary.com/dagkvnqd9/image/upload/ALV-UjVg_6KlQY4qzg_jOn1tmrrJkRfeohqv4DBB33RCW-6tQl2qrsTJAQ_w75-h75-p-rp-mo-br100_woaklp.png",
+    review: "Totally impressed with the service. The car was well maintained Surprisingly, the package is very much affordable compared to others. Must recommended...Completely satisfied 😍",
     rating: 5
   },
   {
-    imgSrc: "https://randomuser.me/api/portraits/women/30.jpg",
-    review: "Excellent service, very responsive staff, and clean cars. Renting was fast and easy. Couldn't ask for more!",
-    rating: 4.5
+    name: "Kunal Gupta",
+    imgSrc: "https://res.cloudinary.com/dagkvnqd9/image/upload/ALV-UjUx6JWzdwOlB_kRtq2QQEbbuL6Ak1ab-69UdrpbTNbbTDTPTQ8s_w75-h75-p-rp-mo-br100_edtsgp.png",
+    review: "Had a really good experience, cars are well maintained and the owner is also very friendly.",
+    rating: 5
+  },
+  {
+    name: "Yogi Vlogs",
+    imgSrc: "https://res.cloudinary.com/dagkvnqd9/image/upload/ALV-UjUQoXpju4C-vMoOklywEjNYxAPTrdcSnN8gUFAvXENCvxKv5ceJ_w75-h75-p-rp-mo-br100_h4puy9.png",
+    review: "I am impressed with the service. Well maintained cars. People were so polite. Highly recommended.",
+    rating: 5
+  },
+  {
+    name: "Vijay Kumar",
+    imgSrc: "https://res.cloudinary.com/dagkvnqd9/image/upload/ALV-UjWhyQNoBZIenAZvCXWQ_4h8kx2BfDN16nVFAS2_AicNOKwSoDzf0w_w75-h75-p-rp-mo-br100_fe8ox9.png",
+    review: "Good condition nd we’ll maintained cars with reasonable price nd offers…Tqu see u soon again",
+    rating: 5
   }
 ];
 
 const Reviews = () => {
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   const handleViewMoreClick = () => {
     navigate('/reviews');
@@ -63,8 +68,8 @@ const Reviews = () => {
 
   return (
     <>
+    <h1 className='review-heading-1'>Customer Experiences</h1>
       <div className="reviews-container">
-        <h1 className='review-heading-1'>Our Reviews</h1>
         <section className="review-section">
           <Carousel showArrows={false}>
             {reviews.map((review, index) => (
@@ -74,6 +79,7 @@ const Reviews = () => {
                   alt={`Review ${index + 1}`} 
                   className="review-img" 
                 />
+                <h5 className="reviewer-name">{review.name}</h5>
                 <p className="review-text">{review.review}</p>
                 <div className="review-rating">{renderStars(review.rating)}</div>
               </div>
@@ -86,9 +92,6 @@ const Reviews = () => {
           View More
         </button>
       </div>
-
-      
-
     </>
   );
 };

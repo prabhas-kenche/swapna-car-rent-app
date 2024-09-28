@@ -108,13 +108,63 @@
 
 
 .note-container {
-    background-color: #f9fbfe;
-    padding: 20px;
-}
-
-.notes {
-    font-family: 'Roboto';
-}
+    background-color: #f9f9f9;  /* Light background for the note container */
+    border: 1px solid #ccc;      /* Border to visually separate the note */
+    padding: 20px;               /* Padding for spacing inside the container */
+    border-radius: 8px;          /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+  }
+  
+  .note-container h2 {
+    font-size: 24px;             /* Larger font size for the heading */
+    font-weight: 600;            /* Semi-bold font */
+    color: #333;                 /* Dark color for the heading */
+    margin-bottom: 15px;         /* Spacing below the heading */
+  }
+  
+  .note-container p {
+    font-size: 16px;             /* Font size for introductory paragraph */
+    font-style: italic;          /* Italicized text for emphasis */
+    color: #555;                 /* Medium grey color */
+    margin-bottom: 15px;         /* Spacing between paragraph and list */
+  }
+  
+  .notes ul {
+    padding-left: 20px;          /* Indent the list items */
+    list-style-type: disc;       /* Bullet points for the list */
+    color: #333;                 /* Darker color for text */
+  }
+  
+  .notes ul li {
+    margin-bottom: 10px;         /* Space between list items */
+    line-height: 1.6;            /* Increase line spacing for readability */
+    font-size: 16px;             /* Adjust font size */
+  }
+  
+  .notes ul ul {
+    padding-left: 20px;          /* Further indent nested lists */
+    list-style-type: circle;     /* Change list style for nested list */
+  }
+  
+  .notes ul ul li {
+    margin-bottom: 5px;          /* Less margin for nested list items */
+    font-size: 15px;             /* Slightly smaller font for nested items */
+  }
+  
+  @media (max-width: 768px) {
+    .note-container {
+      padding: 15px;             /* Adjust padding for smaller screens */
+    }
+  
+    .note-container h2 {
+      font-size: 20px;           /* Reduce heading size for mobile */
+    }
+  
+    .notes ul li, .notes ul ul li {
+      font-size: 14px;           /* Adjust font size for better readability on small screens */
+    }
+  }
+  
 
 
 /* index.css */
@@ -129,4 +179,16 @@ header {
 
 .content-container {
     padding-top: 80px; /* Ensure content doesn't overlap with the sticky header */
+}
+
+body {
+    touch-action: pan-x pan-y; /* Allows zooming on mobile devices */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    user-select: none; /* Prevents text selection on double-click */
+}
+
+img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    pointer-events: none; /* Prevent interaction with images */
 }

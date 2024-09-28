@@ -49,7 +49,7 @@ const OurCars = () => {
             imgSrc: "https://t.ly/S33d9",
             title: "Ford Aspire",
             features: ["5 Passengers", "Model 2018", "3 Bags"],
-            description: " A compact sedan with a comfortable interior, strong petrol engine, and a focus on safety features like airbags and ABS.",
+            description: " A compact sedan with a comfortable interior, strong diesel engine, and a focus on safety features like airbags and ABS.",
             prices: ["24HRS (300 KM) - 1500 Rs", "14HRS (300 KM) - 1300 Rs", "12HRS (150 KM) - 1000 Rs"]
         },
         {
@@ -135,17 +135,32 @@ const OurCars = () => {
                     </div>
                 </div>
 
-                <div className="note-container pb-5 pt-5">
-                    <h2>NOTE :</h2>
-                    <div className="notes">
-                        <p>1. Price is excluding fastag, fuel & fines.</p>
-                        <p>2. After 300 KM, hatchback & sedan cars will be charged ₹5 per KM.</p>
-                        <p>3. Documents needed: original 4-wheeler driving license and original Aadhar card.</p>
-                        <p>4. Age must be above 21 only acceptable.</p>
-                        <p>5. Smoking and drinking alcohol in cars is not allowed. If found, ₹1000 fine will be charged.</p>
-                        <p>6. Max speed limit is 100 KMPH.</p>
-                    </div>
-                </div>
+                <div className="note-container">
+  <h2>NOTE :</h2>
+  <div className="notes">
+    <p>Ensure clarity before renting because "Clarity is key for a smooth rental experience."</p>
+    <ul>
+      <li>You must be 21 years old or above.</li>
+      <li>You should have an authorized driving license.</li>
+      <li>You should provide any one of the following ID proofs: Voter ID or Aadhar Card.</li>
+      <li>You are not allowed to rent a car if you are involved in any traffic-related cases.</li>
+      <li>We provide easy payment methods including Cash, Debit Card, Credit Card, and UPI Payments.</li>
+      <li>You must provide all necessary documents when booking your rental car.</li>
+      <li>
+        After 300 km:
+        <ul>
+          <li>Hatchback and Sedan cars will be charged ₹5 per km.</li>
+          <li>Compact SUVs will be charged ₹6 per km.</li>
+          <li>Ertiga and XL6 will be charged ₹7 per km.</li>
+        </ul>
+      </li>
+      <li>All prices exclude Fastag, fuel, and fines.</li>
+      <li>Smoking and drinking alcohol in cars is strictly prohibited. If found, a ₹1000 fine will be imposed.</li>
+      <li>The maximum speed limit is 100 kmph.</li>
+    </ul>
+  </div>
+</div>
+
                 <div className="pt-5">
                     <div className="background-image">
                         <div className="content">

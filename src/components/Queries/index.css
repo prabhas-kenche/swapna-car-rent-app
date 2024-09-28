@@ -1,0 +1,81 @@
+.how-we-work {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+}
+
+.how-we-work h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.step {
+    text-align: center;
+    max-width: 200px;
+}
+
+.step .icon-container {
+    width: 80px;
+    height: 80px;
+    background-color: #c29862;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.step i {
+    font-size: 2rem;
+    color: white;
+}
+
+.step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.step p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.arrow {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .steps-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .arrow {
+        display: none; /* Hide arrows for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .how-we-work h1 {
+        font-size: 2rem;
+    }
+
+    .step h3 {
+        font-size: 1.1rem;
+    }
+
+    .step p {
+        font-size: 0.85rem;
+    }
+}

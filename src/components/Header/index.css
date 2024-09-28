@@ -21,34 +21,35 @@
   margin: 0 15px;
   font-family: "Roboto"; /* Updated font */
   padding-top: 13px;
-}
-
-.nav-link-2 {
-  font-size: 1rem;
-  color: #323f4b; /* Updated color */
-  margin: 0 15px;
-  font-family: "Roboto"; /* Updated font */
+  transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
 .nav-link:hover {
-  color: #007bff;
+  color: #323f4b; /* Maintain the original color on hover */
 }
 
-/* Sell Button Styles */
-.sell-button {
-  margin-top: 5px;
-  color: #323f4b; /* Updated color */
-  font-family: "Roboto"; /* Updated font */
-  height: 40px;
-  width: 160px;
-  background-color: transparent;
-  border-color: #323f4b;
-  border-width: 1px;
+.nav-link:focus,
+.nav-link:active {
+  color: #323f4b; /* Maintain the original color on focus and active states */
+  outline: none; /* Remove focus outline */
 }
 
-/* Icon Styles */
-.icon {
-  color: #323f4b; /* Updated color */
+/* Active Nav Link Styles */
+.active-nav {
+  color: #ffffff !important; /* Highlight color for active link */
+  font-weight: bold; /* Make active link bold */
+}
+
+body {
+  touch-action: pan-x pan-y; /* Allows zooming on mobile devices */
+  overflow-x: hidden; /* Prevents horizontal scroll */
+  user-select: none; /* Prevents text selection on double-click */
+}
+
+img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+  pointer-events: none; /* Prevent interaction with images */
 }
 
 /* Media Queries */
@@ -69,17 +70,6 @@
       margin: 0 10px; /* Less margin */
       padding-top: 0;
   }
-
-  .nav-link-2 {
-    font-size: 0.9rem; /* Slightly smaller font on mobile */
-    margin: 0 10px; /* Less margin */
-}
-
-  .sell-button {
-      height: 35px; /* Smaller button on mobile */
-      width: 140px; /* Smaller button width */
-      margin-top: 0; /* Reset margin on mobile */
-  }
 }
 
 @media (max-width: 576px) {
@@ -89,23 +79,8 @@
       padding-top: 0;
   }
 
-  .nav-link-2 {
-    font-size: 0.8rem; /* Even smaller font on very small screens */
-    margin: 0 5px; /* Minimal margin */
-}
-
   .self-driving-cars-logo-1 {
       width: 60px; /* Further reduce logo size */
       height: 65px; /* Further adjust height */
   }
-
-
 }
-
-/* Active Nav Link Styles */
-.active-nav {
-  color: #007bff !important; /* Highlight color for active link */
-  font-weight: bold; /* Make active link bold */
-}
-
-

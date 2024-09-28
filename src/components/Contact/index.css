@@ -8,97 +8,69 @@
 
 body {
     background-color: #f5f5f5;
-
     min-height: 100vh;
     padding: 20px 0;
 }
 
 
-.form-container {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    max-width: 700px;
-    width: 100%;
-    margin: 20px 0;
+/* Contact.css */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: left; /* Align text to the left */
 }
 
-.form-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.form-header .icon {
-    font-size: 32px;
-    color: #1aa7ec;
-}
-
-.form-header h2 {
-    font-size: 20px;
-    color: #333;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-top: 15px;
-}
-
-.contact-form .form-row {
-    display: flex;
-    justify-content: space-between;
+.contact-section h2 {
     margin-bottom: 20px;
+    font-size: 2rem;
+    color: #323f4b;
+    text-transform: uppercase; /* Capitalize "Contact Us" */
 }
 
-.contact-form .form-row input,
-.contact-form .form-row textarea {
-    width: 48%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #fafafa;
-    font-size: 14px;
-    outline: none;
-    transition: all 0.3s ease;
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
 }
 
-.contact-form .form-row textarea {
-    width: 100%;
-    resize: none;
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #323f4b;
 }
 
-.contact-form .form-row input:focus,
-.contact-form .form-row textarea:focus {
-    border-color: #db4c3f;
+.contact-item i {
+    margin-right: 10px;
+    color: #000; /* Change icon color to black */
 }
 
-.submit-btn {
-    background-color: #1aa7ec;
-    color: #fff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-    display: block;
-    width: 100%;
+.contact-item a {
+    color: #007bff;
+    text-decoration: none;
 }
 
-.submit-btn:hover {
-    background-color: #1489cb;
+.contact-item a:hover {
+    text-decoration: underline;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .contact-form .form-row {
-        flex-direction: column;
+    .contact-section {
+        padding: 30px 10px; /* Adjust padding for smaller screens */
     }
-
-    .contact-form .form-row input,
-    .contact-form .form-row textarea {
-        width: 100%;
-        margin-bottom: 15px;
+    
+    .contact-section h2 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+    
+    .contact-item {
+        font-size: 1rem; /* Adjust font size for smaller screens */
     }
 }
+
+  
 
 .our-cars {
     display: flex;
@@ -136,9 +108,9 @@ body {
 }
 
 .background-image {
-    width: 98vw;
+    width: 100vw;
     height: 70vh;
-    background-image: url('https://c4.wallpaperflare.com/wallpaper/5/965/110/porsche-911-rsr-2017-racing-wallpaper-thumb.jpg');
+    background-image: url('https://res.cloudinary.com/dagkvnqd9/image/upload/e1csgcui_vpxvcl.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -215,4 +187,17 @@ body {
     font-size: 0.8em;
     color: #666;
     background-color: #f1f1f1;
+}
+
+
+body {
+    touch-action: pan-x pan-y; /* Allows zooming on mobile devices */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    user-select: none; /* Prevents text selection on double-click */
+}
+
+img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    pointer-events: none; /* Prevent interaction with images */
 }
