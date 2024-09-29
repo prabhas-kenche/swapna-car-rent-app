@@ -1,6 +1,6 @@
 .privacy-policy-container {
   padding: 40px;
-  background-color: #ffffff;
+  background-color: #def2f1;
   border-radius: 12px;
   max-width: 900px;
   margin: 40px auto;
@@ -8,57 +8,54 @@
   color: #444;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left; /* Align all text to the left */
+  user-select: text; /* Allow text selection */
+  overflow: auto; /* Enable content scrolling if zoomed in */
+  margin-top: 0px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .privacy-policy-container h1 {
+  font-weight: bold;
   text-align: center;
-  font-size: 40px;
+  font-size: 2.5rem; /* Use rem for scalable sizes */
   margin-bottom: 30px;
   color: #000; /* Primary color for heading */
+  font-family: 'Roboto', sans-serif;
 }
 
 .privacy-policy-container h2 {
+  font-weight: bold;
   text-align: left;
-  font-size: 26px;
+  font-size: 1.6rem; /* Use rem for scalable sizes */
   margin-top: 30px;
   color: #000; /* Secondary color for subheadings */
+  font-family: 'Roboto', sans-serif;
 }
 
 .privacy-policy-container p,
 .privacy-policy-container ul {
   text-align: left;
-  font-size: 18px;
+  font-size: 1.2rem; /* Use rem for scalable sizes */
   line-height: 1.8;
   color: #555; /* Slightly darker color for text */
   margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .privacy-policy-container ul {
   list-style-type: disc;
   margin-left: 40px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .privacy-policy-container ul li {
   margin-bottom: 10px; /* Spacing between list items */
+  font-family: 'Roboto', sans-serif;
 }
 
 .privacy-policy-container a {
   color: #0d6efd;
   text-decoration: none;
-}
-
-.privacy-policy-container a:hover {
-  text-decoration: underline;
-}
-
-/* Adding a hover effect on h2 headings for better interaction */
-.privacy-policy-container h2:hover {
-  color: #000;
-  transition: color 0.3s ease;
-}
-
-/* Enhancing button style for links */
-.privacy-policy-container a {
   font-weight: bold;
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
@@ -66,4 +63,35 @@
 
 .privacy-policy-container a:hover {
   border-bottom: 2px solid #0d6efd;
+  text-decoration: underline;
+}
+
+.privacy-policy-container h2:hover {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+/* Enable zoom functionality */
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .privacy-policy-container {
+    padding: 20px; /* Reduce padding on smaller screens */
+  }
+
+  .privacy-policy-container h1 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .privacy-policy-container h2 {
+    font-size: 1.4rem; /* Adjust font size for smaller screens */
+  }
+
+  .privacy-policy-container p,
+  .privacy-policy-container ul {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
 }

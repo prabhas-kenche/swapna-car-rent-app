@@ -1,4 +1,8 @@
-.car-card-container {
+.our-cars-container{
+  background-color: #2b7a78;
+}
+
+.car-card-container-2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid with wider cards */
     gap: 20px; /* Gap between cards */
@@ -9,7 +13,7 @@
 }
 
 @media (max-width: 767px) {
-    .car-card-container {
+    .car-card-container-2 {
         display: flex;
         margin-right: 0;
         margin-left: 0;
@@ -17,8 +21,9 @@
 }
 
 
+
 .car-card {
-    background-color: white;
+    background-color: #def2f1;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px; /* Increased card width */
@@ -77,20 +82,7 @@
     opacity: 1;
 }
 
-.car-toggle-btn {
-    padding: 8px 16px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px 0;
-    width: 150px;
-}
 
-.car-toggle-btn:hover {
-    background-color: #0056b3;
-}
 
 /* Media Queries for Responsive Cards */
 @media (max-width: 768px) {
@@ -116,13 +108,20 @@
   }
   
   .note-container h2 {
-    font-size: 24px;             /* Larger font size for the heading */
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;             /* Larger font size for the heading */
     font-weight: 600;            /* Semi-bold font */
     color: #333;                 /* Dark color for the heading */
     margin-bottom: 15px;         /* Spacing below the heading */
   }
+
+  .note-container h4{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+  }
   
   .note-container p {
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;             /* Font size for introductory paragraph */
     font-style: italic;          /* Italicized text for emphasis */
     color: #555;                 /* Medium grey color */
@@ -130,23 +129,27 @@
   }
   
   .notes ul {
+    font-family: 'Roboto', sans-serif;
     padding-left: 20px;          /* Indent the list items */
     list-style-type: disc;       /* Bullet points for the list */
     color: #333;                 /* Darker color for text */
   }
   
   .notes ul li {
+    font-family: 'Roboto', sans-serif;
     margin-bottom: 10px;         /* Space between list items */
     line-height: 1.6;            /* Increase line spacing for readability */
     font-size: 16px;             /* Adjust font size */
   }
   
   .notes ul ul {
+    font-family: 'Roboto', sans-serif;
     padding-left: 20px;          /* Further indent nested lists */
     list-style-type: circle;     /* Change list style for nested list */
   }
   
   .notes ul ul li {
+    font-family: 'Roboto', sans-serif;
     margin-bottom: 5px;          /* Less margin for nested list items */
     font-size: 15px;             /* Slightly smaller font for nested items */
   }
@@ -191,4 +194,37 @@ img {
     max-width: 100%; /* Ensure images are responsive */
     height: auto; /* Maintain aspect ratio */
     pointer-events: none; /* Prevent interaction with images */
+}
+
+
+/* General button styles */
+.button {
+  background-color: #2b7a78; /* New background color */
+  height: 40px;
+  width: 130px;
+  border: none; /* Ensure no border */
+  border-radius: 7px;
+  color: #fff; /* Text color */
+  font-size: 16px; /* Adjust font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Hover state */
+.button:hover {
+  background-color: #17252a; 
+  color: #fff;
+}
+
+/* Active/click state */
+.button:active {
+  background-color: #17252a; /* Darker color when clicked */
+  border: none;
+}
+
+/* Disabled button */
+.button:disabled {
+  background-color: grey; /* Greyed out when disabled */
+  cursor: not-allowed;
+  opacity: 0.6;
 }

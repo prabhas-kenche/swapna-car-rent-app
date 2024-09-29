@@ -272,7 +272,7 @@ const CarBookForm = () => {
 
                     {/* Submit Button */}
                     <div className="form-group button-container">
-                        <button type="submit" className="btn btn-primary button-2">Submit Booking</button>
+                        <button type="submit" className="button">Submit Booking</button>
                     </div>
                 </form>
             )}

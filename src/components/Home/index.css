@@ -1,4 +1,6 @@
 /* Base styles for large screens (desktop) */
+
+
 .heading {
     font-size: 70px;
     font-weight: 800;
@@ -9,24 +11,27 @@
 
 .desc {
     font-size: 40px;
-    color: #323f4b;
+    color: #17252a;
 }
 
 .main-page {
     margin-top: 80px;
     padding-top: 40px;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    background-color: #2b7a78;
 }
 
 .heading-container {
     display: flex;
-    flex-direction: column; /* Default to column layout */
+    flex-direction: column;
+    color: #17252a;
   }
   
   @media (min-width: 768px) { /* For larger devices */
     .heading-container {
       flex-direction: row; /* Switch to row layout on larger screens */
       justify-content: center; /* Optional: center the text */
+      color: #17252a;
     }
   }
 
@@ -38,11 +43,13 @@
 
     .desc {
         font-size: 40px; /* Adjust description size */
+        color: #17252a;
     }
 
     .main-page {
         margin-top: 60px;
         padding-top: 30px;
+        background-color: #2b7a78;
     }
 }
 
@@ -54,11 +61,13 @@
 
     .desc {
         font-size: 30px; /* Smaller description font size */
+        color: #17252a;
     }
 
     .main-page {
         margin-top: 40px;
         padding-top: 20px;
+        background-color: #2b7a78;
     }
 
     /* Adjust carousel image size for small screens */
@@ -85,29 +94,35 @@
 
 
 /* Base styles for large screens (desktops) */
+.about-section {
+    background-color: #2b7a78;
+    display: flex;
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center content */
+}
+
 .about-part {
-    margin: 10px;
-    padding: 20px;
-    text-align: left;
+    max-width: 600px; /* Limit width for better readability on larger screens */
+    margin: 0 auto; /* Center horizontally */
 }
 
 .about {
-    font-size: 40px;
-    font-weight: bold;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
-}
-
-.about-2{
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #000000;
     font-family: 'Roboto', sans-serif;
 }
 
-.about-desc {
+.about-2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1f1f1f;
+    font-family: 'Roboto', sans-serif;
+}
+
+.about-desc-2 {
     font-size: 16px;
-    color: #666;
+    color: #def2f1;
     margin-bottom: 20px;
     font-family: 'Roboto', sans-serif;
 }
@@ -115,6 +130,8 @@
 .img-fluid {
     max-width: 100%;
     height: auto;
+    height: 750px;
+    width: 800px;
 }
 
 /* Media Queries for Tablets (768px to 1024px) */
@@ -126,17 +143,19 @@
 
     .about {
         font-size: 35px; /* Slightly smaller for tablets */
+        color: #17252a;
     }
 
-    .about-2{
+    .about-2 {
         font-size: 15px;
         font-weight: bold;
-        color: #333;
+        color: #feffff;
         font-family: 'Roboto', sans-serif;
     }
 
-    .about-desc {
+    .about-desc-2 {
         font-size: 14px;
+        color: #def2f1;
     }
 
     .img-fluid {
@@ -154,18 +173,20 @@
 
     .about {
         font-size: 28px; /* Smaller heading for mobiles */
+        color: #17252a;
     }
 
-    .about-2{
+    .about-2 {
         font-size: 18px;
         font-weight: bold;
-        color: #333;
+        color: #feffff;
         font-family: 'Roboto', sans-serif;
     }
 
-    .about-desc {
+    .about-desc-2 {
         font-size: 14px; /* Smaller paragraph font for mobiles */
         margin-bottom: 15px;
+        color: #def2f1;
     }
 
     .img-fluid {
@@ -178,17 +199,19 @@
 @media (max-width: 375px) {
     .about {
         font-size: 24px; /* Further reduced heading */
+        color: #17252a;
     }
 
-    .about-2{
+    .about-2 {
         font-size: 20px;
         font-weight: bold;
-        color: #333;
+        color: #feffff;
         font-family: 'Roboto', sans-serif;
     }
 
-    .about-desc {
-        font-size: 13px; /* Smaller paragraph font for very small screens */
+    .about-desc-2 {
+        font-size: 13px;
+        color: #def2f1;
     }
 
     .img-fluid {
@@ -196,109 +219,25 @@
     }
 }
 
-/* Base styles for larger devices (desktops) */
-.about-part {
-    margin: 10px;
-    padding: 20px;
-    text-align: left;
-}
-
-.about {
-    font-size: 40px;
-    font-weight: bold;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
-}
-
-.about-desc {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Media Queries for Tablets (768px to 1024px) */
-@media (max-width: 1024px) {
-    .about-part {
-        margin: 0;
-        padding: 15px;
-    }
-
-    .about {
-        font-size: 35px;
-    }
-
-    .about-desc {
-        font-size: 14px;
-    }
-
-    .img-fluid {
-        width: 100%;
-    }
-}
-
-/* Media Queries for Mobile Devices (767px and below) */
-@media (max-width: 767px) {
-    .about-part {
-        margin: 0;
-        padding: 10px;
-        text-align: center; /* Center text for smaller screens */
-    }
-
-    .about {
-        font-size: 28px;
-    }
-
-    .about-desc {
-        font-size: 14px;
-        margin-bottom: 15px;
-    }
-
-    .img-fluid {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-/* Media Queries for Extra Small Mobile (375px and below) */
-@media (max-width: 375px) {
-    .about {
-        font-size: 24px;
-    }
-
-    .about-desc {
-        font-size: 13px;
-    }
-
-    .img-fluid {
-        width: 100%;
-    }
-}
-
 
 
 /* Base styles for larger devices */
 .statistics-row {
-    background-color: #f9fbfe;
+    background-color: #2b7a78;
     font-family: 'Roboto', sans-serif;
 }
 
 .statistics-row h1 {
     font-size: 36px;
     font-weight: 800;
-    color: #333;
+    color: #17252a;
     margin-bottom: 10px;
     font-family: 'Roboto';
 }
 
 .statistics-row p {
     font-size: 14px;
-    color: #666;
+    color: #def2f1;
     font-family: 'Roboto';
 }
 
@@ -327,17 +266,6 @@
     margin: 0 10px; /* Small margin between items */
 }
 
-.statistics-row h1 {
-    font-size: 36px;
-    font-weight: 800;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.statistics-row p {
-    font-size: 14px;
-    color: #666;
-}
 
 /* Media Queries for Tablets (768px to 1024px) */
 @media (max-width: 1024px) {
@@ -388,7 +316,7 @@
 
 
 .welcome-part {
-    background-color: #f9fbfe;
+    background-color: #def2f1;
     font-family: 'Roboto';
 }
 
@@ -450,6 +378,7 @@
     width: 100%;
     height: 600px; /* Can be adjusted based on your design */
     overflow: hidden;
+    background-color: #2b7a78;
 }
 
 .responsive-image {
@@ -462,13 +391,14 @@
     position: absolute;
     bottom: 5%;
     left: 5%;
-    color: white;
+    color: #17252a;
     display: flex;
     align-items: center;
     font-size: 1.5rem;
 }
 
 .overlay i {
+    color: #f9fbfe;
     font-size: 2.5rem;
     margin-right: 10px;
 }
@@ -499,13 +429,16 @@
 .how-we-work {
     text-align: center;
     padding: 50px;
-    background-color: #fff;
+    background-color: #2b7a78;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .how-we-work h1 {
     font-size: 2.5rem;
     margin-bottom: 30px;
     font-weight: bold;
+    color: #17252a;
 }
 
 .steps-container {
@@ -523,7 +456,7 @@
 .step .icon-container {
     width: 80px;
     height: 80px;
-    background-color: #c29862;
+    background-color: #def2f1;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -533,18 +466,19 @@
 
 .step i {
     font-size: 2rem;
-    color: white;
+    color: black;
 }
 
 .step h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
     font-weight: bold;
+    color: #feffff;
 }
 
 .step p {
     font-size: 0.9rem;
-    color: #888;
+    color: #def2f1;
 }
 
 .arrow {

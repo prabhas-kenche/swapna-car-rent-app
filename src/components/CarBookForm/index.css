@@ -1,3 +1,4 @@
+
 @import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'; /* Added animations */
 
 .car-book-form-container {
@@ -6,7 +7,7 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: #feffff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Slight shadow */
     transform: scale(0.95); /* Initial scale */
     opacity: 0; /* Initially hidden */
@@ -36,19 +37,23 @@ label {
 input[type="text"],
 input[type="tel"],
 input[type="email"],
-input[type="datetime-local"],
+input[type="date"],
+input[type="time"],
 input[type="number"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     transition: border 0.3s;
-    opacity: 0;
-    animation: fadeInElement 0.6s forwards 0.4s ease-in-out; /* Animate input fields separately */
+    font-size: 16px;
+    box-sizing: border-box;
+    animation: fadeIn 0.6s forwards ease-in-out 0.5s; /* Animate input fields */
+    opacity: 0; /* Initially hidden */
 }
 
 input:focus {
     border-color: #007BFF;
+    outline: none;
 }
 
 .button-2 {
@@ -105,7 +110,7 @@ button:hover {
 }
 
 .heading-frame {
-    background-color: #007BFF;
+    background-color: #2b7a78;
     color: white;
     padding: 10px;
     border-radius: 8px;

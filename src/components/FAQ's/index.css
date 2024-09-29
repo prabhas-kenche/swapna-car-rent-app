@@ -1,6 +1,6 @@
 .faq-container {
     padding: 40px;
-    background-color: #ffffff;
+    background-color: #def2f1;
     border-radius: 12px;
     max-width: 900px;
     margin: 40px auto;
@@ -8,6 +8,10 @@
     color: #444;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left; /* Align all text to the left */
+    user-select: text; /* Enable text selection */
+    overflow: auto; /* Allow content scrolling if zoomed */
+    margin-top: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .faq-container h1 {
@@ -16,9 +20,11 @@
     font-size: 40px;
     margin-bottom: 30px;
     color: #000; /* Primary color for heading */
+    font-family: 'Roboto', sans-serif;
 }
 
 .faq-container h2 {
+    font-family: 'Roboto', sans-serif;
     text-align: left;
     font-weight: bold;
     font-size: 26px;
@@ -27,28 +33,29 @@
 }
 
 .faq-item {
+    font-family: 'Roboto', sans-serif;
     margin-bottom: 15px; /* Spacing between FAQ items */
 }
 
 .faq-item strong {
+    font-family: 'Roboto', sans-serif;
     display: block;
     font-weight: bold;
     margin-bottom: 5px; /* Space between question and answer */
 }
 
 .faq-container p {
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     line-height: 1.8;
     color: #555; /* Slightly darker color for text */
 }
 
-/* Adding hover effect on h2 headings */
 .faq-container h2:hover {
     color: #000;
     transition: color 0.3s ease;
 }
 
-/* Enhancing link style */
 .faq-container a {
     color: #0d6efd;
     text-decoration: none;
@@ -59,4 +66,15 @@
 
 .faq-container a:hover {
     border-bottom: 2px solid #0d6efd;
+}
+
+/* Enable zoom functionality */
+body {
+    zoom: 1; /* Default zoom */
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        zoom: 0.85; /* Adjust zoom for smaller screens */
+}
 }

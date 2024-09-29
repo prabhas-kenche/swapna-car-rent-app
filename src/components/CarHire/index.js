@@ -14,11 +14,11 @@ const CarHire = () => {
     return (
         <div className="car-hire-section pt-5 pb-5">
             <div className="car-hire-header text-center">
-                <h1 className='car-hire-title'>Enterprise Car Hire</h1>
+                <h1 className='car-hire-title'>ENTERPRISE CAR HIRE</h1>
             </div>
-            <div className="car-card-container d-flex flex-row">
+            <div className="car-card-container-2 d-flex flex-row">
                 <div 
-                    className="car-card text-center col-12 col-md-2" 
+                    className="car-card-2 text-center col-12 col-md-2" 
                     onClick={handleCardClick}
                 >
                     <img src="https://cars.qeemat.com/suzuki/images/swift-new-2024-full.jpg" alt="swift-car" />
@@ -37,7 +37,7 @@ const CarHire = () => {
                     </p>
                 </div>
                 <div 
-                    className="car-card text-center col-12 col-md-2" 
+                    className="car-card-2 text-center col-12 col-md-2" 
                     onClick={handleCardClick}
                 >
                     <img src="https://imgd.aeplcdn.com/642x361/n/cw/ec/51428/hyundai-i20-left-front-three-quarter1.jpeg" alt="i20-car" />
@@ -56,7 +56,7 @@ const CarHire = () => {
                     </p>
                 </div>
                 <div 
-                    className="car-card text-center col-12 col-md-2" 
+                    className="car-card-2 text-center col-12 col-md-2" 
                     onClick={handleCardClick}
                 >
                     <img src="https://t.ly/7olNT" alt="ritz-car" />
@@ -75,7 +75,7 @@ const CarHire = () => {
             </div>
 
             <div className="text-center mt-4">
-                <button className="btn btn-primary" onClick={() => navigate('/ourcars')}>View More</button> 
+                <button className="button2" onClick={() => navigate('/ourcars')}>View More</button> 
             </div>
         </div>
     );

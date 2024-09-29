@@ -1,86 +1,109 @@
-/* Logo Styles */
-.self-driving-cars-logo-1 {
-  padding-top: 10px;
-  width: 100px; /* Default logo size */
-  height: 100px; /* Default logo height */
-  transition: width 0.3s ease, height 0.3s ease; /* Smooth transition for resizing */
-}
-
 /* Navbar Styles */
 .navbar {
+  background-color: #17252a;
   height: 100px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for visibility */
   display: flex;
   align-items: center;
+  padding: 0 60px;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.self-driving-cars-logo-1 {
+  padding-top: 10px;
+  width: 100px;
+  height: 100px;
+  transition: width 0.3s ease, height 0.3s ease;
+  margin-right: 20px;
 }
 
 /* Nav Link Styles */
-.nav-link {
+.navbar .nav-link {
   font-size: 1rem;
-  color: #323f4b; /* Updated color */
+  color: #DEF2F1 !important;
   margin: 0 15px;
-  font-family: "Roboto"; /* Updated font */
+  font-family: "Roboto";
   padding-top: 13px;
-  transition: color 0.3s ease; /* Smooth transition for color change */
+  transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
-.nav-link:hover {
-  color: #323f4b; /* Maintain the original color on hover */
+.navbar .nav-link:hover {
+  color: #3aafa9 !important;
 }
 
-.nav-link:focus,
-.nav-link:active {
-  color: #323f4b; /* Maintain the original color on focus and active states */
-  outline: none; /* Remove focus outline */
-}
+
 
 /* Active Nav Link Styles */
-.active-nav {
-  color: #ffffff !important; /* Highlight color for active link */
-  font-weight: bold; /* Make active link bold */
+.navbar .active-nav {
+  color: #3aafa9 !important; /* Active link color */
+  font-weight: bold;         /* Make the active link bold */
+  border-bottom: 2px solid #3aafa9; /* Optional underline for active state */
 }
 
-body {
-  touch-action: pan-x pan-y; /* Allows zooming on mobile devices */
-  overflow-x: hidden; /* Prevents horizontal scroll */
-  user-select: none; /* Prevents text selection on double-click */
+/* Navbar Toggler (Explorer Button) */
+.navbar-toggler {
+  background-color: #DEF2F1;
+  border-color: #17252a; /* White border for button */
 }
 
-img {
-  max-width: 100%; /* Ensure images are responsive */
-  height: auto; /* Maintain aspect ratio */
-  pointer-events: none; /* Prevent interaction with images */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* White color for explorer icon */
 }
 
 /* Media Queries */
 @media (max-width: 992px) {
   .navbar {
-      height: auto; /* Allow for flexible height on smaller screens */
-      padding: 10px; /* Add some padding */
+    height: 100px;
+    padding: 10px;
+    padding-bottom: 40px;
   }
 
   .self-driving-cars-logo-1 {
-      width: 80px; /* Smaller logo on mobile */
-      height: 85px; /* Adjust height for mobile */
-      padding-top: 15px; /* Adjust padding */
+    width: 80px;
+    height: 85px;
+    padding-top: 15px;
   }
 
-  .nav-link {
-      font-size: 0.9rem; /* Slightly smaller font on mobile */
-      margin: 0 10px; /* Less margin */
-      padding-top: 0;
+  .navbar-collapse {
+    display: none;
+  }
+
+  .navbar-collapse.show {
+    text-align: left;
+    display: flex; /* Use flexbox to layout items */
+    flex-direction: row; /* Stack items vertically */
+    position: absolute; /* Position it absolutely */
+    top: 100%; /* Position below the navbar */
+    left: 0; /* Align left */
+    right: 0; /* Align right */
+    background-color: #17252a; /* Same background for dropdown */
+    z-index: 1000; /* Bring it on top */
+    padding-left: 30px;
+    padding-bottom: 20px;
+  }
+
+  .navbar .nav-link {
+    text-align: left;
+    margin-bottom: 10px 0;
+    color: #DEF2F1 !important;
   }
 }
 
 @media (max-width: 576px) {
-  .nav-link {
-      font-size: 0.8rem; /* Even smaller font on very small screens */
-      margin: 0 5px; /* Minimal margin */
-      padding-top: 0;
+  .navbar .nav-link {
+    font-size: 0.8rem;
+    margin: 0 5px;
+    padding-top: 0;
+    color: #DEF2F1 !important;
   }
 
   .self-driving-cars-logo-1 {
-      width: 60px; /* Further reduce logo size */
-      height: 65px; /* Further adjust height */
+    width: 60px;
+    height: 65px;
   }
 }

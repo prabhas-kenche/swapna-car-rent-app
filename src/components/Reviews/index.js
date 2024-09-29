@@ -63,20 +63,20 @@ const Reviews = () => {
   const navigate = useNavigate();
 
   const handleViewMoreClick = () => {
-    navigate('/reviews');
+    navigate('/reviews'); // Navigate to the reviews page
   };
 
   return (
     <>
-    <h1 className='review-heading-1'>Customer Experiences</h1>
       <div className="reviews-container">
+      <h1 className='review-heading-1'>CUSTOMER EXPERIENCES</h1>
         <section className="review-section">
           <Carousel showArrows={false}>
             {reviews.map((review, index) => (
               <div key={index} className="review-slide">
                 <img 
                   src={review.imgSrc} 
-                  alt={`Review ${index + 1}`} 
+                  alt={`Profile-picture-of-${review.name}`} 
                   className="review-img" 
                 />
                 <h5 className="reviewer-name">{review.name}</h5>
@@ -85,12 +85,20 @@ const Reviews = () => {
               </div>
             ))}
           </Carousel>
+          
         </section>
-      </div>
-      <div className="text-center mt-4">
-        <button className='btn btn-primary' onClick={handleViewMoreClick}>
+        <div className="text-center mt-4">
+        <button 
+          className="button2" 
+          onClick={handleViewMoreClick} 
+          style={{ 
+
+            width: '150px'
+          }}
+        >
           View More
         </button>
+      </div>
       </div>
     </>
   );

@@ -30,21 +30,22 @@ const Home = () => {
     }, []);
 
     return (
-        <>
-            <Header />
+
+        <div>
+            <Header/>
             <div className="main-page d-flex justify-content-center align-items-center flex-column text-center mt-5 pt-10">
             <div className="heading-container">
-  <h1 className="heading">Rent</h1>
-  <h1 className="heading">Your</h1>
-  <h1 className="heading">Dream</h1>
-  <h1 className="heading">Car</h1>
-</div>
+                <h1 className="heading">Rent</h1>
+                <h1 className="heading">Your</h1>
+                <h1 className="heading">Dream</h1>
+                <h1 className="heading">Car</h1>
+                </div>
 
                 <h6 className="desc">Quick. Easy. Secure.</h6>
                 <AutoplayCarousel />
             </div>
 
-            <div className="pt-5 pb-5">
+            <div>
                 <div className="image-container">
                     <img
                         className="responsive-image"
@@ -62,7 +63,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="pt-5 pb-5">
+            <div>
                 <section className="how-we-work">
                     <h1 className='about'>HOW WE WORK</h1>
                     <div className="steps-container">
@@ -93,27 +94,26 @@ const Home = () => {
                 </section>
             </div>
 
-            <div className="about-section container py-5">
-                <div className="row align-items-center">
-                    <div className="about-part col-12 col-md-4 text-md-left text-center">
-                        <h1 className='about'>Why Choose Us?</h1>
-                        <h6 className='about-2'>Hygiene First</h6>
-                        <p className='about-desc'>Our cars are sanitized and cleaned thoroughly between each rental, ensuring a comfortable and safe journey.</p>
-                        <h6 className='about-2'>Flexible Rentals</h6>
-                        <p className='about-desc'>Rent a car for daily, weekly, or monthly needs, tailored to your travel plans.</p>
-                        <h6 className='about-2'>Hassle-Free Experience</h6>
-                        <p className='about-desc'>Enjoy a seamless rental process with our efficient booking system and friendly customer service.</p>
-                    </div>
-                    <div className="col-12 col-md-7 text-center">
-                        <img
-                            src="https://res.cloudinary.com/dagkvnqd9/image/upload/e1csgcui_vpxvcl.png"
-                            alt="car-image"
-                            className="img-fluid"
-                            loading="lazy"
-                        />
-                    </div>
+            <div className="about-section py-5 d-flex flex-column flex-md-row justify-content-center align-items-center">
+                <div className="about-part col-md-4 text-md-left text-center">
+                    <h1 className='about'>Why Choose Us?</h1>
+                    <h6 className='about-2'>Hygiene First</h6>
+                    <p className='about-desc-2'>Our cars are sanitized and cleaned thoroughly between each rental, ensuring a comfortable and safe journey.</p>
+                    <h6 className='about-2'>Flexible Rentals</h6>
+                    <p className='about-desc-2'>Rent a car for daily, weekly, or monthly needs, tailored to your travel plans.</p>
+                    <h6 className='about-2'>Hassle-Free Experience</h6>
+                    <p className='about-desc'>Enjoy a seamless rental process with our efficient booking system and friendly customer service.</p>
+                </div>
+                <div className="col-md-7 text-center">
+                    <img
+                        src="https://res.cloudinary.com/dagkvnqd9/image/upload/e1csgcui_vpxvcl.png"
+                        alt="car-image"
+                        className="img-fluid"
+                        loading="lazy"
+                    />
                 </div>
             </div>
+
 
             <div className="statistics-row py-5">
                 <div className="container">
@@ -197,11 +197,19 @@ const Home = () => {
             </div>
             <div className="">
                 <div className="footer-note">
-                    Copyright © 2024 Swapna Self Drive Cars. All Rights Reserved.
-                    Powered by Vspaze Technologies
-                </div>
+                        Copyright © 2024 Swapna Self Drive Cars. All Rights Reserved.
+                        Powered by{' '}
+                        <a 
+                            href="https://www.instagram.com/vspaze_technologies?igsh=bnh5YTB6MnI5NnVx" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            style={{ color: 'inherit', textDecoration: 'underline' }}
+                        >
+                            Vspaze Technologies
+                        </a>
+                    </div>
             </div>
-        </>
+        </div>
     );
 };
 

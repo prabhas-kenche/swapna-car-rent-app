@@ -70,9 +70,10 @@ const OurReviews = () => {
   return (
     <>
       <Header />
+      <div className='reviews-page-container'>
       <div className="header-section text-center">
-        <h1>OUR REVIEWS</h1>
-        <p>HOME/<span>OUR REVIEWS</span></p>
+        <h1>GOOGLE REVIEWS</h1>
+        <p>HOME/<span>GOOGLE REVIEWS</span></p>
       </div>
       <div className="reviews-vertical-container">
         <h1 className="review-heading">All Reviews</h1>
@@ -91,8 +92,20 @@ const OurReviews = () => {
           ))}
         </div>
       </div>
-      <div className="button-container">
-        <button className='btn btn-primary' onClick={handleViewMore}>View All Reviews</button>
+      <div className="text-center mt-4">
+        <button 
+          className="button2" 
+          onClick={handleViewMore} 
+          style={{ 
+            display: 'block', 
+            margin: '0 auto', 
+            width: '150px', /* Adjust the width as needed */
+            padding: '8px 16px', /* Adjust padding for button size */
+            fontSize: '14px' /* Adjust the font size */
+          }}
+        >
+          View All Reviews
+        </button>
       </div>
       <div className="pt-5">
         <div className="background-image">
@@ -100,7 +113,7 @@ const OurReviews = () => {
             <img src="https://res.cloudinary.com/dzptijryk/image/upload/v1726250227/WhatsApp_Image_2024-09-13_at_9.33.52_PM-removebg_welufj.png" className="self-driving-cars-logo" alt="Self Driving Cars Logo" />
             <p className="showroom-location">: SHOWROOM LOCATION :</p>
             <p>Road No.6 Housing Board Colony, Jedcherla, Mahboobnagar (Dist)</p>
-            <div className="contact-info">
+            <div className="contact-info d-flex flex-row">
               <p><span>PHONE:</span> 8309772580, 9550884883</p>
               <p><span>EMAIL:</span> info@autozone.com</p>
               <p><span>HOURS:</span> Mon – Fri :: 9am – 6pm</p>
@@ -116,8 +129,18 @@ const OurReviews = () => {
           </div>
         </div>
         <div className="footer-note">
-          Copyright © 2024 Swapna Self Drive Cars. All Rights Reserved.
-        </div>
+                        Copyright © 2024 Swapna Self Drive Cars. All Rights Reserved.
+                        Powered by{' '}
+                        <a 
+                            href="https://www.instagram.com/vspaze_technologies?igsh=bnh5YTB6MnI5NnVx" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            style={{ color: 'inherit', textDecoration: 'underline' }}
+                        >
+                            Vspaze Technologies
+                        </a>
+                    </div>
+      </div>
       </div>
     </>
   );

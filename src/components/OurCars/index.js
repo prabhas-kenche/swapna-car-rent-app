@@ -89,13 +89,13 @@ const OurCars = () => {
     return (
         <>
             <Header />
-            <div>
+            <div className='our-cars-container'>
                 <div className="our-cars text-center" id="our-cars-section">
                     <h1>OUR CARS</h1>
                     <p>HOME/<span>OUR CARS</span></p>
                 </div>
-                <div className="pt-5 pb-5">
-                    <div className="car-card-container text-center">
+                <div>
+                    <div className=" pt-5 pb-5 car-card-container-2 text-center">
                         {cars.map((car, index) => (
                             <div className="car-card text-center" key={index}>
                                 <img src={car.imgSrc} alt={`${car.title}-car`} />
@@ -121,12 +121,12 @@ const OurCars = () => {
                                     </div>
                                 )}
 
-                                <button className="car-toggle-btn" onClick={() => toggleDetails(index)}>
+                                <button className="button" onClick={() => toggleDetails(index)}>
                                     {visibleIndex === index ? "Hide Details" : "View Details"}
                                 </button>
 
                                 {visibleIndex === index && (
-                                    <button className="car-toggle-btn" onClick={() => handleBookCar(car)}>
+                                    <button className="button" onClick={() => handleBookCar(car)}>
                                         Book My Car
                                     </button>
                                 )}
@@ -136,9 +136,9 @@ const OurCars = () => {
                 </div>
 
                 <div className="note-container">
-  <h2>NOTE :</h2>
+  <h2>NOTE</h2>
   <div className="notes">
-    <p>Ensure clarity before renting because "Clarity is key for a smooth rental experience."</p>
+    <h4>Ensure clarity before renting because clarity is key for a smooth rental experience.</h4>
     <ul>
       <li>You must be 21 years old or above.</li>
       <li>You should have an authorized driving license.</li>
@@ -167,7 +167,7 @@ const OurCars = () => {
                             <img src="https://res.cloudinary.com/dzptijryk/image/upload/v1726250227/WhatsApp_Image_2024-09-13_at_9.33.52_PM-removebg_welufj.png" className="self-driving-cars-logo" alt="Self Driving Cars Logo" />
                             <p className="showroom-location">: SHOWROOM LOCATION :</p>
                             <p>Road No.6 Housing Board Colony, Jedcherla, Mahboobnagar (Dist)</p>
-                            <div className="contact-info">
+                            <div className="contact-info d-flex flex-row">
                                 <p><span>PHONE:</span> 8309772580, 9550884883</p>
                                 <p><span>EMAIL:</span> info@autozone.com</p>
                                 <p><span>HOURS:</span> Mon – Fri :: 9am – 6pm</p>
@@ -184,7 +184,17 @@ const OurCars = () => {
                     </div>
                     <div className="footer-note">
                         Copyright © 2024 Swapna Self Drive Cars. All Rights Reserved.
+                        Powered by{' '}
+                        <a 
+                            href="https://www.instagram.com/vspaze_technologies?igsh=bnh5YTB6MnI5NnVx" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            style={{ color: 'inherit', textDecoration: 'underline' }}
+                        >
+                            Vspaze Technologies
+                        </a>
                     </div>
+
                 </div>
             </div>
         </>
