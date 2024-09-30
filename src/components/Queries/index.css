@@ -1,3 +1,10 @@
+.about2{
+    font-size: 28px; /* Base font size */
+    margin-bottom: 10px;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+}
+
 .how-we-work-2 {
     text-align: center;
     padding: 50px;
@@ -25,7 +32,7 @@
 .step-2 .icon-container-2 {
     width: 80px;
     height: 80px;
-    background-color: #17252a;
+    background-color: #000000;
     border-radius: 50%;
     display: flex;
     align-items: center;

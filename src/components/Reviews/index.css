@@ -8,7 +8,7 @@
 
 /* Main Reviews Container */
 .reviews-container {
-  background-color: #2b7a78; /* Background color for the whole content */
+  background-color: #3aafa9; /* Background color for the whole content */
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@
 
 /* Carousel Slide */
 .review-slide {
-  background-color: #fff; /* Background color for cards */
+  background-color: #def2f1; /* Background color for cards */
   border-radius: 15px;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Add some shadow for depth */
   padding: 20px;
@@ -61,7 +61,7 @@
 .review-heading-1 {
   font-weight: bold;
   font-size: 35px;
-
+  color: #000000;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -82,7 +82,7 @@
 @media (max-width: 768px) {
   .reviews-container {
     padding: 20px;
-    background-color: #2b7a78;
+    background-color: #3aafa9;
   }
 
   h1.review-heading-1 {
@@ -111,7 +111,7 @@
 @media (max-width: 480px) {
   .reviews-container {
     padding: 15px;
-    background-color: #2b7a78;
+    background-color: #3aafa9;
   }
 
   h1.review-heading-1 {

@@ -12,15 +12,20 @@
   overflow: auto; /* Enable content scrolling if zoomed in */
   margin-top: 0px;
   font-family: 'Roboto', sans-serif;
+  border: 2px solid #000;
 }
 
 .terms-conditions-container h1 {
+  background-color: #17252a;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #feffff;
+  border-radius: 10px;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
   text-align: center; /* Centered main heading */
   font-size: 40px; /* Font size for main title */
   margin-bottom: 30px; /* Spacing below the title */
-  color: #000; /* Primary color for heading */
 }
 
 .terms-conditions-container h2 {

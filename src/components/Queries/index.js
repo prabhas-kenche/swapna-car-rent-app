@@ -8,7 +8,7 @@ const Queries = () => {
   return (
     <div>
       <section className="how-we-work-2">
-        <h1 className='about'>ESSENTIALS</h1>
+        <h1 className='about2'>ESSENTIALS</h1>
         <div className="steps-container-2">
           <div className="step-2">
             <div className="icon-container-2" onClick={() => navigate('/privacy-policy')}>

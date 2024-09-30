@@ -1,9 +1,11 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './index.css';
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('/'); // Default active link
+  const location = useLocation();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -27,7 +29,12 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
-  const handleNavLinkClick = () => {
+  useEffect(() => {
+    setActiveLink(location.pathname); // Update active link based on current route
+  }, [location]);
+
+  const handleNavLinkClick = (link) => {
+    setActiveLink(link); // Set the clicked link as active
     if (isMenuOpen) {
       setMenuOpen(false);
     }
@@ -58,42 +65,37 @@ const Header = () => {
         <div className="navbar-nav">
           <NavLink
             exact
-            className="nav-link"
-            activeClassName="active-nav" 
+            className={`nav-link ${activeLink === '/' ? 'active-nav' : ''}`} 
             to="/" 
-            onClick={handleNavLinkClick}
+            onClick={() => handleNavLinkClick('/')}
           >
             HOME
           </NavLink>
           <NavLink
-            className="nav-link"
-            activeClassName="active-nav" 
+            className={`nav-link ${activeLink === '/ourcars' ? 'active-nav' : ''}`} 
             to="/ourcars"
-            onClick={handleNavLinkClick}
+            onClick={() => handleNavLinkClick('/ourcars')}
           >
             OUR CARS
           </NavLink>
           <NavLink
-            className="nav-link"
-            activeClassName="active-nav" 
+            className={`nav-link ${activeLink === '/reviews' ? 'active-nav' : ''}`} 
             to="/reviews"
-            onClick={handleNavLinkClick}
+            onClick={() => handleNavLinkClick('/reviews')}
           >
             REVIEWS
           </NavLink>
           <NavLink
-            className="nav-link"
-            activeClassName="active-nav" 
+            className={`nav-link ${activeLink === '/contact' ? 'active-nav' : ''}`} 
             to="/contact"
-            onClick={handleNavLinkClick}
+            onClick={() => handleNavLinkClick('/contact')}
           >
             CONTACT
           </NavLink>
           <NavLink
-            className="nav-link"
-            activeClassName="active-nav" 
+            className={`nav-link ${activeLink === '/aboutus' ? 'active-nav' : ''}`} 
             to="/aboutus"
-            onClick={handleNavLinkClick}
+            onClick={() => handleNavLinkClick('/aboutus')}
           >
             ABOUT US
           </NavLink>

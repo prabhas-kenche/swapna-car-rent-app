@@ -12,14 +12,20 @@
     overflow: auto; /* Allow content scrolling if zoomed */
     margin-top: 0px;
     font-family: 'Roboto', sans-serif;
+    border: 2px solid #000;
 }
 
 .faq-container h1 {
+    background-color: #17252a;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #feffff;
+  border-radius: 10px;
     font-weight: bold;
     text-align: center;
     font-size: 40px;
     margin-bottom: 30px;
-    color: #000; /* Primary color for heading */
+ /* Primary color for heading */
     font-family: 'Roboto', sans-serif;
 }
 

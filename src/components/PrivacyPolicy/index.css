@@ -12,14 +12,20 @@
   overflow: auto; /* Enable content scrolling if zoomed in */
   margin-top: 0px;
   font-family: 'Roboto', sans-serif;
+  border: 2px solid #000;
 }
 
 .privacy-policy-container h1 {
+  background-color: #17252a;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #feffff;
+  border-radius: 10px;
   font-weight: bold;
   text-align: center;
   font-size: 2.5rem; /* Use rem for scalable sizes */
   margin-bottom: 30px;
-  color: #000; /* Primary color for heading */
+  /* Primary color for heading */
   font-family: 'Roboto', sans-serif;
 }
 

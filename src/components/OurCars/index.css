@@ -1,5 +1,5 @@
 .our-cars-container{
-  background-color: #2b7a78;
+  background-color: #3aafa9;
 }
 
 .car-card-container-2 {
@@ -100,7 +100,7 @@
 
 
 .note-container {
-    background-color: #f9f9f9;  /* Light background for the note container */
+    background-color: #def2f1;  /* Light background for the note container */
     border: 1px solid #ccc;      /* Border to visually separate the note */
     padding: 20px;               /* Padding for spacing inside the container */
     border-radius: 8px;          /* Rounded corners */
@@ -116,44 +116,79 @@
   }
 
   .note-container h4{
+    text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
   }
+
+  @media (min-width: 768px) {
+    .note-container h4 {
+        text-transform: uppercase;  /* Capitalize text on larger devices */
+    }
+}
   
   .note-container p {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;             /* Font size for introductory paragraph */
+    font-size: 18px;             /* Font size for introductory paragraph */
     font-style: italic;          /* Italicized text for emphasis */
     color: #555;                 /* Medium grey color */
     margin-bottom: 15px;         /* Spacing between paragraph and list */
   }
+.notes{
+  padding-left: 50px;
+  padding-right: 50px;
+}
   
   .notes ul {
     font-family: 'Roboto', sans-serif;
     padding-left: 20px;          /* Indent the list items */
-    list-style-type: disc;       /* Bullet points for the list */
+    list-style-type: none;       /* Remove default bullet points */
     color: #333;                 /* Darker color for text */
-  }
-  
-  .notes ul li {
+}
+
+.notes ul li {
     font-family: 'Roboto', sans-serif;
     margin-bottom: 10px;         /* Space between list items */
     line-height: 1.6;            /* Increase line spacing for readability */
     font-size: 16px;             /* Adjust font size */
-  }
-  
-  .notes ul ul {
+    position: relative;          /* Position for the tick marks */
+    padding-left: 25px;          /* Space for the tick icon */
+}
+
+.notes ul li::before {
+    content: '✔';                /* Tick mark character */
+    color: #2b7a78;                /* Green color for the tick mark */
+    font-size: 18px;             /* Adjust size of tick mark */
+    position: absolute;          /* Absolute position for tick mark */
+    left: 0;                     /* Align tick mark to the left */
+    top: 0;                      /* Align tick mark to the top */
+    line-height: 1.6;            /* Align with text */
+}
+
+.notes ul ul {
     font-family: 'Roboto', sans-serif;
     padding-left: 20px;          /* Further indent nested lists */
-    list-style-type: circle;     /* Change list style for nested list */
-  }
-  
-  .notes ul ul li {
+    list-style-type: none;       /* Remove bullet points for nested list */
+}
+
+.notes ul ul li {
     font-family: 'Roboto', sans-serif;
     margin-bottom: 5px;          /* Less margin for nested list items */
     font-size: 15px;             /* Slightly smaller font for nested items */
-  }
-  
+    position: relative;          /* Position for tick marks */
+    padding-left: 25px;          /* Space for the tick icon */
+}
+
+.notes ul ul li::before {
+    content: '✔';                /* Tick mark character for nested lists */
+    color: #2b7a78;                /* Green color for nested tick marks */
+    font-size: 16px;             /* Slightly smaller tick mark */
+    position: absolute;          /* Absolute position for tick mark */
+    left: 0;                     /* Align tick mark to the left */
+    top: 0;                      /* Align tick mark to the top */
+    line-height: 1.6;            /* Align with text */
+}
+
   @media (max-width: 768px) {
     .note-container {
       padding: 15px;             /* Adjust padding for smaller screens */

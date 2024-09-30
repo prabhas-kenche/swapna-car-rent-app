@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
+import Footer from '../Footer'
 import './index.css';
 
 const OurCars = () => {
@@ -70,7 +71,7 @@ const OurCars = () => {
             imgSrc: "https://i.cdn.newsbytesapp.com/images/l41120230408124304.jpeg",
             title: "Kia Sonet Diesel",
             features: ["5 Passengers", "Model 2024", "3 Bags"],
-            description: "A tech-loaded subcompact SUV featuring a clutchless manual transmission, sunroof, and advanced infotainment for a comfortable, high-tech ride.",
+            description: "A tech-loaded subcompact SUV featuring a clutchless manual transmission, sunroof, and infotainment for a comfortable, high-tech ride.",
             prices: ["24HRS (300 KM) - 2100 Rs", "14HRS (300 KM) - 1800 Rs", "12HRS (150 KM) - 1450 Rs"]
         },
         {
@@ -126,7 +127,7 @@ const OurCars = () => {
                                 </button>
 
                                 {visibleIndex === index && (
-                                    <button className="button" onClick={() => handleBookCar(car)}>
+                                    <button className="ml-2 button" onClick={() => handleBookCar(car)}>
                                         Book My Car
                                     </button>
                                 )}
@@ -136,9 +137,9 @@ const OurCars = () => {
                 </div>
 
                 <div className="note-container">
-  <h2>NOTE</h2>
   <div className="notes">
-    <h4>Ensure clarity before renting because clarity is key for a smooth rental experience.</h4>
+    <h4>Ensure clarity before renting because clarity is key for 
+        a smooth rental experience.</h4>
     <ul>
       <li>You must be 21 years old or above.</li>
       <li>You should have an authorized driving license.</li>
@@ -147,7 +148,7 @@ const OurCars = () => {
       <li>We provide easy payment methods including Cash, Debit Card, Credit Card, and UPI Payments.</li>
       <li>You must provide all necessary documents when booking your rental car.</li>
       <li>
-        After 300 km:
+        AFTER 300 KM:
         <ul>
           <li>Hatchback and Sedan cars will be charged ₹5 per km.</li>
           <li>Compact SUVs will be charged ₹6 per km.</li>
@@ -161,27 +162,8 @@ const OurCars = () => {
   </div>
 </div>
 
-                <div className="pt-5">
-                    <div className="background-image">
-                        <div className="content">
-                            <img src="https://res.cloudinary.com/dzptijryk/image/upload/v1726250227/WhatsApp_Image_2024-09-13_at_9.33.52_PM-removebg_welufj.png" className="self-driving-cars-logo" alt="Self Driving Cars Logo" />
-                            <p className="showroom-location">: SHOWROOM LOCATION :</p>
-                            <p>Road No.6 Housing Board Colony, Jedcherla, Mahboobnagar (Dist)</p>
-                            <div className="contact-info d-flex flex-row">
-                                <p><span>PHONE:</span> 8309772580, 9550884883</p>
-                                <p><span>EMAIL:</span> info@autozone.com</p>
-                                <p><span>HOURS:</span> Mon – Fri :: 9am – 6pm</p>
-                            </div>
-                            <div className="social-icons">
-                            <a href="https://x.com/"><i className="fab fa-twitter"></i></a>
-                            <a href="https://www.pinterest.com/"><i className="fab fa-pinterest"></i></a>
-                            <a href="https://www.behance.net/"><i className="fab fa-behance"></i></a>
-                            <a href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a>
-                            <a href="https://www.youtube.com/"><i className="fab fa-youtube"></i></a>
-                            <a href="https://www.instagram.com/swapnaselfdrivecars?igsh=MTIzM2s3OTd3dzJvNw=="><i className="fab fa-instagram"></i></a>
-                        </div>
-                        </div>
-                    </div>
+                <div>
+                    <Footer />
                     <div className="footer-note">
                         Copyright © 2024 Swapna Self Drive Cars. All Rights Reserved.
                         Powered by{' '}

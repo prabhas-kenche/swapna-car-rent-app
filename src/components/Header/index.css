@@ -1,6 +1,6 @@
 /* Navbar Styles */
 .navbar {
-  background-color: #17252a;
+  background-color: #2b7a78;
   height: 100px;
   display: flex;
   align-items: center;
@@ -33,22 +33,24 @@
 }
 
 .navbar .nav-link:hover {
-  color: #3aafa9 !important;
+  color: #17252a !important;
 }
 
 
 
 /* Active Nav Link Styles */
 .navbar .active-nav {
-  color: #3aafa9 !important; /* Active link color */
+  color: #17252a !important; /* Active link color */
   font-weight: bold;         /* Make the active link bold */
-  border-bottom: 2px solid #3aafa9; /* Optional underline for active state */
+  border-bottom: 2px solid #17252a; /* Optional underline for active state */
 }
 
 /* Navbar Toggler (Explorer Button) */
 .navbar-toggler {
+  margin-top: 10px;
+  height: 50px;
   background-color: #DEF2F1;
-  border-color: #17252a; /* White border for button */
+  border-color: #2b7a78; /* White border for button */
 }
 
 .navbar-toggler-icon {
@@ -56,24 +58,27 @@
 }
 
 /* Media Queries */
+/* Media Queries */
 @media (max-width: 992px) {
   .navbar {
-    height: 100px;
+    height: 90px;
     padding: 10px;
     padding-bottom: 40px;
   }
 
   .self-driving-cars-logo-1 {
-    width: 80px;
-    height: 85px;
-    padding-top: 15px;
+    width: 90px;
+    height: 95px;
+    padding-top: 5px;
+    padding-bottom: 15px;
   }
 
   .navbar-collapse {
-    display: none;
+    display: none; /* Start with height 0 */
   }
 
   .navbar-collapse.show {
+    max-height: 500px;
     text-align: left;
     display: flex; /* Use flexbox to layout items */
     flex-direction: row; /* Stack items vertically */
@@ -81,7 +86,7 @@
     top: 100%; /* Position below the navbar */
     left: 0; /* Align left */
     right: 0; /* Align right */
-    background-color: #17252a; /* Same background for dropdown */
+    background-color: #2b7a78; /* Same background for dropdown */
     z-index: 1000; /* Bring it on top */
     padding-left: 30px;
     padding-bottom: 20px;
@@ -92,18 +97,36 @@
     margin-bottom: 10px 0;
     color: #DEF2F1 !important;
   }
+
+  .navbar .active-nav {
+    color: #17252a !important; /* Active link color */
+    font-weight: bold;         /* Make the active link bold */
+    border-bottom: none;/* Optional underline for active state */
+  }
+
+  /* Remove blur effect on hover for smaller devices */
+  .navbar-toggler:hover {
+    filter: none; /* Ensure no blur or other effects on hover */
+    background-color: #DEF2F1; /* Maintain the same background color */
+  }
 }
 
 @media (max-width: 576px) {
   .navbar .nav-link {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     margin: 0 5px;
     padding-top: 0;
     color: #DEF2F1 !important;
   }
 
   .self-driving-cars-logo-1 {
-    width: 60px;
-    height: 65px;
+    width: 80px;
+    height: 85px;
+  }
+
+  .navbar .active-nav {
+    color: #17252a !important; /* Active link color */
+    font-weight: bold;         /* Make the active link bold */
+    border-bottom: none;/* Optional underline for active state */
   }
 }

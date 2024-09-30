@@ -4,6 +4,8 @@ import AutoplayCarousel from '../AutoplayCarousel';
 import CarHire from '../CarHire';
 import Reviews from '../Reviews';
 import Queries from '../Queries';
+import Footer from '../Footer';
+import AutoScrollButton from '../AutoScrollButton'; // Importing the AutoScrollButton component
 import './index.css';
 
 const Home = () => {
@@ -30,15 +32,19 @@ const Home = () => {
     }, []);
 
     return (
-
         <div>
-            <Header/>
-            <div className="main-page d-flex justify-content-center align-items-center flex-column text-center mt-5 pt-10">
-            <div className="heading-container">
-                <h1 className="heading">Rent</h1>
-                <h1 className="heading">Your</h1>
-                <h1 className="heading">Dream</h1>
-                <h1 className="heading">Car</h1>
+            <Header />
+            <div className="main-page d-flex justify-content-center align-items-center flex-column text-center">
+                <img
+                    src="https://res.cloudinary.com/dagkvnqd9/image/upload/v1727696561/Untitled_6_iwqqaq.png"
+                    alt="ssdc"
+                    className="name"
+                />
+                <div className="heading-container">
+                    <h1 className="heading">Rent</h1>
+                    <h1 className="heading">Your</h1>
+                    <h1 className="heading">Dream</h1>
+                    <h1 className="heading">Car</h1>
                 </div>
 
                 <h6 className="desc">Quick. Easy. Secure.</h6>
@@ -65,7 +71,7 @@ const Home = () => {
 
             <div>
                 <section className="how-we-work">
-                    <h1 className='about'>HOW WE WORK</h1>
+                    <h1 className="about">HOW WE WORK</h1>
                     <div className="steps-container">
                         <div className="step">
                             <div className="icon-container">
@@ -96,13 +102,19 @@ const Home = () => {
 
             <div className="about-section py-5 d-flex flex-column flex-md-row justify-content-center align-items-center">
                 <div className="about-part col-md-4 text-md-left text-center">
-                    <h1 className='about'>Why Choose Us?</h1>
-                    <h6 className='about-2'>Hygiene First</h6>
-                    <p className='about-desc-2'>Our cars are sanitized and cleaned thoroughly between each rental, ensuring a comfortable and safe journey.</p>
-                    <h6 className='about-2'>Flexible Rentals</h6>
-                    <p className='about-desc-2'>Rent a car for daily, weekly, or monthly needs, tailored to your travel plans.</p>
-                    <h6 className='about-2'>Hassle-Free Experience</h6>
-                    <p className='about-desc'>Enjoy a seamless rental process with our efficient booking system and friendly customer service.</p>
+                    <h1 className="about">Why Choose Us?</h1>
+                    <h6 className="about-2">Hygiene First</h6>
+                    <p className="about-desc-2">
+                        Our cars are sanitized and cleaned thoroughly between each rental, ensuring a comfortable and safe journey.
+                    </p>
+                    <h6 className="about-2">Flexible Rentals</h6>
+                    <p className="about-desc-2">
+                        Rent a car for daily, weekly, or monthly needs, tailored to your travel plans.
+                    </p>
+                    <h6 className="about-2">Hassle-Free Experience</h6>
+                    <p className="about-desc">
+                        Enjoy a seamless rental process with our efficient booking system and friendly customer service.
+                    </p>
                 </div>
                 <div className="col-md-7 text-center">
                     <img
@@ -113,7 +125,6 @@ const Home = () => {
                     />
                 </div>
             </div>
-
 
             <div className="statistics-row py-5">
                 <div className="container">
@@ -148,8 +159,10 @@ const Home = () => {
                 <div className="container">
                     <div className="row align-items-center mb-5">
                         <div className="col-12 col-md-4">
-                            <h1 className='about'>Unforgettable Journey Starts Here</h1>
-                            <p className='about-desc'>Explore the great outdoors and start your unforgettable adventure and memorable experience that will leave a lasting impression with our Swapna self drive cars..</p>
+                            <h1 className="about">Unforgettable Journey Starts Here</h1>
+                            <p className="about-desc">
+                                Explore the great outdoors and start your unforgettable adventure and memorable experience that will leave a lasting impression with our Swapna self drive cars.
+                            </p>
                         </div>
                         <div className="col-12 col-md-8">
                             <img
@@ -162,9 +175,11 @@ const Home = () => {
                     </div>
 
                     <div className="row align-items-center mb-5">
-                    <div className="col-12 col-md-4 order-md-2">
-                            <h1 className='about'>Swapna Self Drive Cars prioritizes your health and safety with clean interiors</h1>
-                            <p className='about-desc'>This emphasizes the importance of our company's commitment to cleanliness that is crucial for your health and safety.</p>
+                        <div className="col-12 col-md-4 order-md-2">
+                            <h1 className="about">Swapna Self Drive Cars prioritizes your health and safety with clean interiors</h1>
+                            <p className="about-desc">
+                                This emphasizes the importance of our company's commitment to cleanliness that is crucial for your health and safety.
+                            </p>
                         </div>
 
                         <div className="col-12 col-md-8 order-md-1">
@@ -189,28 +204,27 @@ const Home = () => {
             </div>
 
             <CarHire />
-
             <Queries />
             <Reviews />
-            <div className='bg-container'>
+            <Footer />
 
+            <div className="footer-note">
+                Copyright © 2024 Swapna Self Drive Cars. All Rights Reserved.
+                Powered by{' '}
+                <a
+                    href="https://www.instagram.com/vspaze_technologies?igsh=bnh5YTB6MnI5NnVx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: 'inherit', textDecoration: 'underline' }}
+                >
+                    Vspaze Technologies
+                </a>
             </div>
-            <div className="">
-                <div className="footer-note">
-                        Copyright © 2024 Swapna Self Drive Cars. All Rights Reserved.
-                        Powered by{' '}
-                        <a 
-                            href="https://www.instagram.com/vspaze_technologies?igsh=bnh5YTB6MnI5NnVx" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            style={{ color: 'inherit', textDecoration: 'underline' }}
-                        >
-                            Vspaze Technologies
-                        </a>
-                    </div>
-            </div>
+
+            <AutoScrollButton />
         </div>
     );
 };
 
 export default Home;
+

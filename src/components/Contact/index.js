@@ -1,4 +1,5 @@
 import Header from '../Header';
+import Footer from '../Footer';
 import { useEffect } from 'react';
 import { MdAddCall, MdAttachEmail } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -34,7 +35,7 @@ const Contact = () => {
             <Header />
             <div className='contact-container'>
             <div className="our-cars text-center">
-                <h1>CONTACT</h1>
+                <h1>CONTACT US</h1>
                 <p>HOME/<span>CONTACT</span></p>
             </div>
 
@@ -72,40 +73,20 @@ const Contact = () => {
                     <h3>Location</h3>
                     <p>Come by and see us!</p>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15209.930673775368!2d78.1247!3d16.7739511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bca313e8169a3fb%3A0xdaf8f9a5f397d9b8!2sSwapna%20self%20drive%20cars!5e0!3m2!1sen!2sin!4v1695981937359!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15209.930673775368!2d78.1247!3d16.7739511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bca313e8169a3fb%3A0xdaf8f9a5f397d9b8!2sSwapna%20self%20drive%20cars!5e0!3m2!1sen!2sin&t=k"
                         width="100%"
                         height="450"
-                        allowFullScreen=""
+                        allowfullscreen=""
                         loading="lazy"
                     ></iframe>
+
+
+
                 </div>
             </section>
 
             <div className="pt-5">
-                <div className="background-image">
-                    <div className="content">
-                        <img 
-                            src="https://res.cloudinary.com/dzptijryk/image/upload/v1726250227/WhatsApp_Image_2024-09-13_at_9.33.52_PM-removebg_welufj.png" 
-                            className="self-driving-cars-logo" 
-                            alt="Self Driving Cars Logo" 
-                        />
-                        <p className="showroom-location">: SHOWROOM LOCATION :</p>
-                        <p>Road No.6 Housing Board Colony, Jedcherla, Mahboobnagar (Dist)</p>
-                        <div className="contact-info d-flex flex-row justify-content-center">
-                            <p><span>PHONE:</span> 8309772580 / 9550884883</p>
-                            <p><span>EMAIL:</span> info@autozone.com</p>
-                            <p><span>HOURS:</span> Mon – Fri :: 9am – 6pm</p>
-                        </div>
-                        <div className="social-icons">
-                            <a href="https://x.com/"><i className="fab fa-twitter"></i></a>
-                            <a href="https://www.pinterest.com/"><i className="fab fa-pinterest"></i></a>
-                            <a href="https://www.behance.net/"><i className="fab fa-behance"></i></a>
-                            <a href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a>
-                            <a href="https://www.youtube.com/"><i className="fab fa-youtube"></i></a>
-                            <a href="https://www.instagram.com/swapnaselfdrivecars?igsh=MTIzM2s3OTd3dzJvNw=="><i className="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
+                <Footer />
                 <div className="footer-note">
     Copyright © 2024 Swapna Self Drive Cars. All Rights Reserved.
     Powered by{' '}
