@@ -1,10 +1,17 @@
 import React, {useEffect} from 'react';
+import { FaShareAlt } from "react-icons/fa"; 
 import './index.css';
 
 const PrivacyPolicy = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+const handleShare = () => {
+  const sharableLink = `${window.location.origin}/privacy-policy`
+  navigator.clipboard.writeText(sharableLink);
+  alert("Privacy Policy link copied to clipboard!");
+}
 
   return (
     <div className="privacy-policy-container">
@@ -83,6 +90,11 @@ const PrivacyPolicy = () => {
 
       <h2>Consent</h2>
       <p>By using our website, you consent to this privacy policy.</p>
+
+      <div className='share-icon-container' onClick={handleShare}>
+        <FaShareAlt className="share-icon" />
+        <span className="share-text">Share</span>
+      </div>
     </div>
   );
 };

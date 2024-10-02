@@ -43,7 +43,7 @@ const Home = () => {
                 <div className="heading-container">
                     <h1 className="heading">Rent</h1>
                     <h1 className="heading">Your</h1>
-                    <h1 className="heading">Dream</h1>
+                    <h1 className="heading">Desired</h1>
                     <h1 className="heading">Car</h1>
                 </div>
 

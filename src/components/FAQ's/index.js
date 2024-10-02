@@ -1,10 +1,17 @@
 import React, { useEffect } from 'react';
+import { FaShareAlt } from "react-icons/fa"; 
 import './index.css';
 
 const FAQ = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const handleShare = () => {
+        const sharableLink = `${window.location.origin}/faq`
+        navigator.clipboard.writeText(sharableLink);
+        alert('FAQ link copied to clipboard!');
+    }
 
     return (
         <div className="faq-container">
@@ -86,6 +93,11 @@ const FAQ = () => {
             <p>For any further questions or concerns, contact us at:</p>
             <p><strong>Phone:</strong> 8309772580 / 9550884883</p>
             <p><strong>Email:</strong> <a href="mailto:swapnaselfdrivecars@gmail.com">swapnaselfdrivecars@gmail.com</a></p>
+
+            <div className='share-icon-container' onClick={handleShare}>
+                <FaShareAlt className="share-icon" />
+                <span className="share-text">Share</span>
+            </div>
         </div>
     );
 };

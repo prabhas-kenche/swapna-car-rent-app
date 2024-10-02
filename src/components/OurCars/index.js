@@ -1,21 +1,24 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
-import Footer from '../Footer'
+import Footer from '../Footer';
+import { useAuth } from '../AuthContext';
+import { auth, googleProvider } from '../../firebaseConfig';
+import { signInWithPopup } from 'firebase/auth';
 import './index.css';
 
 const OurCars = () => {
-    const [visibleIndex, setVisibleIndex] = useState(null);
-    const navigate = useNavigate();
+  const [visibleIndex, setVisibleIndex] = useState(null);
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
-    const toggleDetails = (index) => {
-        setVisibleIndex(visibleIndex === index ? null : index);
-    };
+  const toggleDetails = (index) => {
+    setVisibleIndex(visibleIndex === index ? null : index);
+  };
 
-    useEffect(() => {
-        window.scrollTo(0, 0); // Scroll to top instantly
-    }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
     const cars = [
         {
@@ -83,9 +86,20 @@ const OurCars = () => {
         }
     ];
 
-    const handleBookCar = (car) => {
-        navigate('/car-book-form', { state: { car } });
-    };
+    const handleBookCar = async (car) => {
+        try {
+          if (user) {
+            navigate('/car-book-form', { state: { car } });
+          } else {
+            const result = await signInWithPopup(auth, googleProvider);
+            if (result.user) {
+              navigate('/car-book-form', { state: { car } });
+            }
+          }
+        } catch (error) {
+          console.error('Error during booking or login:', error);
+        }
+      };
 
     return (
         <>

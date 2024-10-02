@@ -1,10 +1,22 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Assuming you're using react-router-dom for routing
+import { FaShareAlt } from "react-icons/fa";   // Import the share icon
 import './index.css';
 
 const TermsAndConditions = () => {
+    // eslint-disable-next-line no-unused-vars
+    const navigate = useNavigate();
+
     useEffect(() => {
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 0);  // Scroll to top on page load
     }, []);
+
+    // Share link function
+    const handleShare = () => {
+        const shareableLink = `${window.location.origin}/terms-conditions`;
+        navigator.clipboard.writeText(shareableLink);  // Copy the link to the clipboard
+        alert('Terms and Conditions link copied to clipboard!');
+    };
 
     return (
         <div className="terms-conditions-container">
@@ -55,9 +67,13 @@ const TermsAndConditions = () => {
             </p>
 
             <h2>8. Traffic Violations</h2>
-            <p>
-                The Renter is liable for traffic violations.
-            </p>
+            <p>The Renter is liable for traffic violations.</p>
+
+            {/* Share icon */}
+            <div className="share-icon-container" onClick={handleShare}>
+                <FaShareAlt className="share-icon" />
+                <span className="share-text">Share</span>
+            </div>
         </div>
     );
 };

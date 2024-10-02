@@ -1,0 +1,74 @@
+
+  /* MyBookings.css */
+  .bookings-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards horizontally */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+  }
+  
+
+  .booking-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .booking-card:hover {
+    transform: translateY(-5px); /* Small lift effect on hover */
+  }
+  
+  .booking-card h3 {
+    font-weight: bold;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .booking-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .booking-card {
+      width: 100%; /* Full width on smaller devices */
+    }
+
+  }
+  
+  .booking-car-image {
+    width: 100%; /* Or any specific size you prefer */
+    height: auto;
+    border-radius: 8px;
+}
+
+.error-container {
+  padding-top: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.error-container p{
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+}
+
+.login-image{
+  height: 370px;
+}

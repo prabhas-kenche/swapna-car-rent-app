@@ -85,3 +85,28 @@ body {
       zoom: 0.85; /* Adjust zoom for smaller screens */
   }
 }
+
+
+.share-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.share-icon {
+  font-size: 24px;
+  color: #000; /* Green color for the share icon */
+  margin-right: 8px;
+}
+
+.share-text {
+  font-size: 16px;
+  color: #000;
+}
+
+.share-icon-container:hover .share-icon, 
+.share-icon-container:hover .share-text {
+  color: #000; /* Darker green on hover */
+}

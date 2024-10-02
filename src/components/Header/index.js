@@ -1,11 +1,20 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import React from 'react'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { useEffect, useState } from 'react';
+import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'; 
+import { auth, googleProvider } from '../../firebaseConfig'; 
+import { signInWithPopup, signOut } from 'firebase/auth'; 
+import { useAuth } from '../AuthContext'; // Import useAuth
 import './index.css';
+import Loader from '../Loader'; // Assuming you have a Loader component
 
 const Header = () => {
+  const { user } = useAuth(); // Get user from AuthContext
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('/'); // Default active link
+  const [activeLink, setActiveLink] = useState('/');
+  const [loading, setLoading] = useState(false); // Loader state
   const location = useLocation();
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -33,10 +42,19 @@ const Header = () => {
     setActiveLink(location.pathname); // Update active link based on current route
   }, [location]);
 
-  const handleNavLinkClick = (link) => {
-    setActiveLink(link); // Set the clicked link as active
-    if (isMenuOpen) {
-      setMenuOpen(false);
+  const handleLoginClick = async () => {
+    setLoading(true); // Show loader
+    try {
+      if (user) {
+        await signOut(auth);
+        navigate('/'); // Redirect to home after logout
+      } else {
+        await signInWithPopup(auth, googleProvider);
+      }
+    } catch (error) {
+      console.error('Error signing in/out: ', error);
+    } finally {
+      setLoading(false); // Hide loader after process
     }
   };
 
@@ -50,6 +68,7 @@ const Header = () => {
             alt="Self Driving Cars Logo"
           />
         </NavLink>
+        
         <button
           className="navbar-toggler"
           type="button"
@@ -67,39 +86,49 @@ const Header = () => {
             exact
             className={`nav-link ${activeLink === '/' ? 'active-nav' : ''}`} 
             to="/" 
-            onClick={() => handleNavLinkClick('/')}
+            onClick={() => setActiveLink('/')}
           >
             HOME
           </NavLink>
           <NavLink
             className={`nav-link ${activeLink === '/ourcars' ? 'active-nav' : ''}`} 
             to="/ourcars"
-            onClick={() => handleNavLinkClick('/ourcars')}
+            onClick={() => setActiveLink('/ourcars')}
           >
             OUR CARS
           </NavLink>
           <NavLink
             className={`nav-link ${activeLink === '/reviews' ? 'active-nav' : ''}`} 
             to="/reviews"
-            onClick={() => handleNavLinkClick('/reviews')}
+            onClick={() => setActiveLink('/reviews')}
           >
             REVIEWS
           </NavLink>
           <NavLink
             className={`nav-link ${activeLink === '/contact' ? 'active-nav' : ''}`} 
             to="/contact"
-            onClick={() => handleNavLinkClick('/contact')}
+            onClick={() => setActiveLink('/contact')}
           >
             CONTACT
           </NavLink>
           <NavLink
             className={`nav-link ${activeLink === '/aboutus' ? 'active-nav' : ''}`} 
             to="/aboutus"
-            onClick={() => handleNavLinkClick('/aboutus')}
+            onClick={() => setActiveLink('/aboutus')}
           >
             ABOUT US
           </NavLink>
+          <NavLink
+            className={`nav-link ${activeLink === '/my-bookings' ? 'active-nav' : ''}`} 
+            to="/my-bookings"
+            onClick={() => setActiveLink('/my-bookings')}
+          >
+            HISTORY
+          </NavLink>
         </div>
+        <button className="login-icon" onClick={handleLoginClick} disabled={loading}>
+          {loading ? <Loader /> : user ? <FaSignOutAlt /> : <FaSignInAlt />} {/* Toggle login/logout icon */}
+        </button>
       </div>
     </nav>
   );
