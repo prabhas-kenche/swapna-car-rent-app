@@ -1,21 +1,35 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Assuming you're using react-router-dom for routing
-import { FaShareAlt } from "react-icons/fa";   // Import the share icon
+import React, { useEffect, useState } from 'react';
+import { FaShareAlt } from "react-icons/fa";   
 import './index.css';
 
 const TermsAndConditions = () => {
-    // eslint-disable-next-line no-unused-vars
-    const navigate = useNavigate();
+    const [isModalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);  // Scroll to top on page load
     }, []);
 
-    // Share link function
-    const handleShare = () => {
+    const handleShare = async () => {
         const shareableLink = `${window.location.origin}/terms-conditions`;
-        navigator.clipboard.writeText(shareableLink);  // Copy the link to the clipboard
-        alert('Terms and Conditions link copied to clipboard!');
+        const shareData = {
+            title: 'Terms and Conditions - Swapna Self Drive Cars',
+            text: 'Check out our Terms and Conditions for important information.',
+            url: shareableLink,
+        };
+
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+                console.log('Content shared successfully');
+            } catch (error) {
+                console.error('Error sharing:', error);
+            }
+        } else {
+            navigator.clipboard.writeText(shareableLink);
+            alert('Terms and Conditions link copied to clipboard!');
+        }
+
+        setModalOpen(false); // Close modal after sharing
     };
 
     return (
@@ -74,6 +88,20 @@ const TermsAndConditions = () => {
                 <FaShareAlt className="share-icon" />
                 <span className="share-text">Share</span>
             </div>
+            {isModalOpen && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <h2>Share This Terms and Conditions</h2>
+                        <button onClick={handleShare}>Share via Web Share API</button>
+                        <button onClick={() => {
+                            navigator.clipboard.writeText(`${window.location.origin}/terms-conditions`);
+                            alert("Terms and Conditions link copied to clipboard!");
+                            setModalOpen(false);
+                        }}>Copy Link</button>
+                        <button onClick={() => setModalOpen(false)}>Close</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

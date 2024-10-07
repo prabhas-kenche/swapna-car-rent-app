@@ -2,6 +2,8 @@ import React from 'react';
 import { auth, googleProvider } from '../../firebaseConfig'; // Adjust the path as needed
 import { signInWithPopup } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import { FcGoogle } from "react-icons/fc";
+import './index.css'
 
 const GoogleLogin = () => {
     const navigate = useNavigate();
@@ -18,8 +20,7 @@ const GoogleLogin = () => {
 
     return (
         <div className="google-login-container">
-            <h2>Login with Google</h2>
-            <button onClick={handleGoogleLogin}>Sign in with Google</button>
+            <button onClick={handleGoogleLogin}><FcGoogle className='google-icon' />  Sign in with Google</button>
         </div>
     );
 };

@@ -1,5 +1,18 @@
 /* Base styles for large screens (desktop) */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* This will help with layout consistency */
+  }
+
+.html, body {
+    height: 100%; /* Ensure full height */
+    width: 100%; /* Ensure full width */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+  
+  
 
 .heading {
     font-size: 70px;

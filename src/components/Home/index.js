@@ -5,6 +5,7 @@ import CarHire from '../CarHire';
 import Reviews from '../Reviews';
 import Queries from '../Queries';
 import Footer from '../Footer';
+import TrackingMap from '../TrackingMap';
 import AutoScrollButton from '../AutoScrollButton'; // Importing the AutoScrollButton component
 import './index.css';
 
@@ -34,6 +35,7 @@ const Home = () => {
     return (
         <div>
             <Header />
+            <TrackingMap />
             <div className="main-page d-flex justify-content-center align-items-center flex-column text-center">
                 <img
                     src="https://res.cloudinary.com/dagkvnqd9/image/upload/v1727696561/Untitled_6_iwqqaq.png"
@@ -139,7 +141,7 @@ const Home = () => {
                         </div>
                         <div className="col-12 col-md-8 d-flex justify-content-between text-center">
                             <div className="stat-box">
-                                <h1>140+</h1>
+                                <h1>155+</h1>
                                 <p>GOOGLE REVIEWS</p>
                             </div>
                             <div className="stat-box">
@@ -227,4 +229,3 @@ const Home = () => {
 };
 
 export default Home;
-

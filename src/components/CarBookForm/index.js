@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import emailjs from 'emailjs-com';
-import { collection, addDoc} from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
 import { auth, db } from '../../firebaseConfig';
-
-
 import './index.css';
 
 const CarBookForm = () => {
@@ -24,6 +22,7 @@ const CarBookForm = () => {
         dropTime: '',
         visitingPlaces: '',
         totalDays: '',
+        totalHours: 0,
     });
 
     const [minDropDate, setMinDropDate] = useState('');
@@ -59,28 +58,30 @@ const CarBookForm = () => {
                 setIsDropDisabled(true);
             }
 
-            calculateTotalDays(updatedPickupDate, updatedPickupTime, formData.dropDate, formData.dropTime);
+            calculateTotalTime(updatedPickupDate, updatedPickupTime, formData.dropDate, formData.dropTime);
         }
 
         if (name === 'dropDate' || name === 'dropTime') {
             const updatedDropDate = name === 'dropDate' ? value : formData.dropDate;
             const updatedDropTime = name === 'dropTime' ? value : formData.dropTime;
-            calculateTotalDays(formData.pickupDate, formData.pickupTime, updatedDropDate, updatedDropTime);
+            calculateTotalTime(formData.pickupDate, formData.pickupTime, updatedDropDate, updatedDropTime);
         }
     };
 
-    const calculateTotalDays = (pickupDate, pickupTime, dropDate, dropTime) => {
+    const calculateTotalTime = (pickupDate, pickupTime, dropDate, dropTime) => {
         if (pickupDate && pickupTime && dropDate && dropTime) {
             const startDate = new Date(`${pickupDate}T${pickupTime}`);
             const endDate = new Date(`${dropDate}T${dropTime}`);
             const differenceInTime = endDate.getTime() - startDate.getTime();
 
-            const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
-            const differenceInHours = Math.ceil((differenceInTime % (1000 * 3600 * 24)) / (1000 * 3600));
+            const totalHours = Math.ceil(differenceInTime / (1000 * 3600));
+            const differenceInDays = Math.floor(totalHours / 24);
+            const remainingHours = totalHours % 24;
 
             setFormData((prevData) => ({
                 ...prevData,
-                totalDays: `${differenceInDays} days, ${differenceInHours} hours`,
+                totalDays: `${differenceInDays} days, ${remainingHours} hours`,
+                totalHours,
             }));
         }
     };
@@ -93,19 +94,24 @@ const CarBookForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         if (formData.age < 21) {
             alert('You must be over 21 years old to book a car.');
             return;
         }
-    
+
+        if (formData.totalHours < 12) {
+            alert('You must book the car for at least 12 hours.');
+            return;
+        }
+
         const emailData = {
             to_name: "Swapna Self Drive Cars",
             from_name: formData.name,
             ...formData,
             carName: location.state.car.title,
         };
-    
+
         emailjs.send('service_fztnjic', 'template_mn2smp8', emailData, 'y5F9fIgHF5dMzYL9S')
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
@@ -115,31 +121,29 @@ const CarBookForm = () => {
             .catch((err) => {
                 console.log('FAILED...', err);
             });
-    
-            const user = auth.currentUser;
-            if (!user) {
-                alert("You must be logged in to book a car.");
-                return;
-            }
-    
-            try {
-                const bookingData = {
-                    ...formData,
-                    carTitle: location.state.car.title,
-                    carImage: location.state.car.imgSrc,
-                    userId: user.uid,
-                };
-    
-                await addDoc(collection(db, "my-bookings"), bookingData);
-                setSubmitted(true);
-                navigate('/my-bookings');
-            } catch (error) {
-                console.error("Error submitting booking:", error);
-                alert("Failed to submit booking. Please try again.");
-            }
-        };
-    
-    
+
+        const user = auth.currentUser;
+        if (!user) {
+            alert("You must be logged in to book a car.");
+            return;
+        }
+
+        try {
+            const bookingData = {
+                ...formData,
+                carTitle: location.state.car.title,
+                carImage: location.state.car.imgSrc,
+                userId: user.uid,
+            };
+
+            await addDoc(collection(db, "my-bookings"), bookingData);
+            setSubmitted(true);
+            navigate('/my-bookings');
+        } catch (error) {
+            console.error("Error submitting booking:", error);
+            alert("Failed to submit booking. Please try again.");
+        }
+    };
 
     const handleGoHome = () => {
         navigate('/');
@@ -155,7 +159,7 @@ const CarBookForm = () => {
                     <button onClick={handleGoHome} className='btn btn-primary'>Go to Home Page</button>
                 </div>
             ) : (
-                <form onSubmit={handleSubmit} className="animate__animated animate__fadeInUp">
+                <form onSubmit={handleSubmit} className="animate-slide-up">
                     <h2 className="heading-frame">Book {location.state.car.title}</h2>
 
                     <div className="form-group">
@@ -219,8 +223,8 @@ const CarBookForm = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="visitingPlaces">Visiting Places</label>
-                        <textarea id="visitingPlaces" name="visitingPlaces" value={formData.visitingPlaces} onChange={handleChange}></textarea>
+                        <label htmlFor="visitingPlaces"><span className="required-one">*</span> Visiting Places</label>
+                        <input type='text' id="visitingPlaces" name="visitingPlaces" required value={formData.visitingPlaces} onChange={handleChange} />
                     </div>
 
                     <div className="form-group">
@@ -228,7 +232,9 @@ const CarBookForm = () => {
                         <input type="text" id="totalDays" name="totalDays" value={formData.totalDays} onChange={handleChange} disabled />
                     </div>
 
-                    <button type="submit" className='btn btn-primary'>Submit Booking</button>
+                    <div className='d-flex flex-row justify-content-center'>
+                        <button type="submit" className='button'>Submit Booking</button>
+                    </div>
                 </form>
             )}
         </div>

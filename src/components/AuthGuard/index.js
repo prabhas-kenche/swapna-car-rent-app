@@ -1,19 +1,28 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../AuthContext'; // Import the useAuth hook
+// AuthContext.js
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../firebaseConfig'; // Adjust the path as needed
 
-const AuthGuard = ({ children }) => {
-  const { user, loading } = useAuth();
-  const navigate = useNavigate();
+const AuthContext = createContext();
 
-  if (loading) return <div>Loading...</div>; // Wait for auth state to be determined
+export const useAuth = () => useContext(AuthContext);
 
-  if (!user) {
-    navigate('/login'); // Redirect to login page if the user is not authenticated
-    return null;
-  }
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  return children; // Allow access to protected routes if the user is authenticated
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setLoading(false); // Stop loading once the auth state is determined
+    });
+
+    return () => unsubscribe(); // Clean up the listener on unmount
+  }, []);
+
+  return (
+    <AuthContext.Provider value={{ user, loading }}>
+      {loading ? <div>Loading...</div> : children}
+    </AuthContext.Provider>
+  );
 };
-
-export default AuthGuard;

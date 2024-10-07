@@ -1,17 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaShareAlt } from "react-icons/fa"; 
 import './index.css';
 
 const FAQ = () => {
+    const [isModalOpen, setModalOpen] = useState(false);
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
-    const handleShare = () => {
-        const sharableLink = `${window.location.origin}/faq`
-        navigator.clipboard.writeText(sharableLink);
-        alert('FAQ link copied to clipboard!');
-    }
+    const handleShare = async () => {
+        const sharableLink = `${window.location.origin}/faq`;
+        const shareData = {
+            title: 'FAQ - Swapna Self Drive Cars',
+            text: 'Check out our FAQ for answers to common questions.',
+            url: sharableLink,
+        };
+
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+                console.log('Content shared successfully');
+            } catch (error) {
+                console.error('Error sharing:', error);
+            }
+        } else {
+            navigator.clipboard.writeText(sharableLink);
+            alert('FAQ link copied to clipboard!');
+        }
+
+        setModalOpen(false); // Close modal after sharing
+    };
 
     return (
         <div className="faq-container">
@@ -98,6 +117,20 @@ const FAQ = () => {
                 <FaShareAlt className="share-icon" />
                 <span className="share-text">Share</span>
             </div>
+            {isModalOpen && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <h2>Share This FAQ</h2>
+                        <button onClick={handleShare}>Share via Web Share API</button>
+                        <button onClick={() => {
+                            navigator.clipboard.writeText(`${window.location.origin}/faq`);
+                            alert("FAQ link copied to clipboard!");
+                            setModalOpen(false);
+                        }}>Copy Link</button>
+                        <button onClick={() => setModalOpen(false)}>Close</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

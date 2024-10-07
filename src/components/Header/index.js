@@ -1,17 +1,19 @@
-import React from 'react'
-import { NavLink, useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
+import React from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'; 
 import { useEffect, useState } from 'react';
-import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'; 
+
 import { auth, googleProvider } from '../../firebaseConfig'; 
 import { signInWithPopup, signOut } from 'firebase/auth'; 
 import { useAuth } from '../AuthContext'; // Import useAuth
 import './index.css';
+// eslint-disable-next-line no-unused-vars
 import Loader from '../Loader'; // Assuming you have a Loader component
 
 const Header = () => {
   const { user } = useAuth(); // Get user from AuthContext
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('/');
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(false); // Loader state
   const location = useLocation();
   const navigate = useNavigate(); // Initialize useNavigate
@@ -58,6 +60,20 @@ const Header = () => {
     }
   };
 
+  // Effect for handling login location
+  useEffect(() => {
+    const handleLogin = async () => {
+
+      // If logged in and on MY HISTORY page, do nothing (stay on the page)
+      if (location.pathname === '/my-bookings') {
+        return;
+      }
+      if (!user) return;
+    };
+
+    handleLogin();
+  }, [user, location.pathname]);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
       <div className="navbar-content">
@@ -86,49 +102,51 @@ const Header = () => {
             exact
             className={`nav-link ${activeLink === '/' ? 'active-nav' : ''}`} 
             to="/" 
-            onClick={() => setActiveLink('/')}
-          >
+            onClick={() => setActiveLink('/')}>
             HOME
           </NavLink>
           <NavLink
             className={`nav-link ${activeLink === '/ourcars' ? 'active-nav' : ''}`} 
             to="/ourcars"
-            onClick={() => setActiveLink('/ourcars')}
-          >
+            onClick={() => setActiveLink('/ourcars')}>
             OUR CARS
           </NavLink>
           <NavLink
             className={`nav-link ${activeLink === '/reviews' ? 'active-nav' : ''}`} 
             to="/reviews"
-            onClick={() => setActiveLink('/reviews')}
-          >
+            onClick={() => setActiveLink('/reviews')}>
             REVIEWS
           </NavLink>
           <NavLink
             className={`nav-link ${activeLink === '/contact' ? 'active-nav' : ''}`} 
             to="/contact"
-            onClick={() => setActiveLink('/contact')}
-          >
+            onClick={() => setActiveLink('/contact')}>
             CONTACT
           </NavLink>
           <NavLink
             className={`nav-link ${activeLink === '/aboutus' ? 'active-nav' : ''}`} 
             to="/aboutus"
-            onClick={() => setActiveLink('/aboutus')}
-          >
+            onClick={() => setActiveLink('/aboutus')}>
             ABOUT US
           </NavLink>
           <NavLink
             className={`nav-link ${activeLink === '/my-bookings' ? 'active-nav' : ''}`} 
             to="/my-bookings"
-            onClick={() => setActiveLink('/my-bookings')}
-          >
-            HISTORY
+            onClick={() => setActiveLink('/my-bookings')}>
+            MY HISTORY
           </NavLink>
+
+          {/* Conditionally render LOGOUT link */}
+          {user && (
+            <NavLink
+              className="nav-link"
+              onClick={handleLoginClick} // Use handleLoginClick to log out
+              to="#" // Prevent navigation on click
+            >
+              LOGOUT
+            </NavLink>
+          )}
         </div>
-        <button className="login-icon" onClick={handleLoginClick} disabled={loading}>
-          {loading ? <Loader /> : user ? <FaSignOutAlt /> : <FaSignInAlt />} {/* Toggle login/logout icon */}
-        </button>
       </div>
     </nav>
   );

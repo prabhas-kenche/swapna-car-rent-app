@@ -127,3 +127,20 @@ button:hover {
 button-2 {
     margin: 0 auto; /* Ensure button is centered */
 }
+
+/* index.css */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.7s ease-out forwards;
+}
+

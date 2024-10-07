@@ -45,6 +45,7 @@ const styles = {
         bottom: '20px',
         right: '20px',
         padding: '5px',
+        marginBottom: '38px',
         backgroundColor: '#17252a', // Background color for the button
         border: 'none',
         borderRadius: '50%', // Circular button

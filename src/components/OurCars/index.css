@@ -1,3 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* This will help with layout consistency */
+}
+
+.html, body {
+  height: 100%; /* Ensure full height */
+  width: 100%; /* Ensure full width */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
 .our-cars-container{
   background-color: #3aafa9;
 }
@@ -262,4 +274,28 @@ img {
   background-color: grey; /* Greyed out when disabled */
   cursor: not-allowed;
   opacity: 0.6;
+}
+
+
+.form-slide {
+  position: fixed;
+  bottom: -100%; /* Initially hidden off-screen */
+  left: 0;
+  right: 0;
+  transition: bottom 0.3s ease-in-out; /* Smooth slide effect */
+}
+
+.form-slide.show {
+  bottom: 0; /* Slide in when visible */
+}
+
+
+.share-icon-2{
+  color: #000;
+  font-size: 25px;
+}
+
+.share-text-2{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
